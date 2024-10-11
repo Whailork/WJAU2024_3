@@ -1,22 +1,17 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
-    public static GameManager gameManager;
-    private List<string> enemies; // Enemies
-    private List<string> towers; // Towers
-    private int Hp;
-    private int money;
-
+    public static WaveManager waveManager;
+    private int wave;
+    private int nbRemaining;
     private void Awake()
     {
-        if (gameManager == null)
+        if (waveManager == null)
         {
-            gameManager = this;
+            waveManager = this;
             DontDestroyOnLoad(this);
         }
         else
@@ -25,7 +20,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
     // Start is called before the first frame update
     void Start()
     {

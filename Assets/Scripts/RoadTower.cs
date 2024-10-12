@@ -27,7 +27,7 @@ public class RoadTower : Tower
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.GetType() == typeof(Monster))
+        if (collision.GetType() == typeof(Monster.Monster))
         {
             Debug.Log("Collision with Monster");
 

@@ -1,57 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 //using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Godzilla : Monster
+namespace Monster
 {
-
-    //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
-
-    // Variables
-    public int nextPoint;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Godzilla : Monster
     {
 
-        electric = false;
+        //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
-        nextPoint = 0;
-    }
+        // Variables
+        public int nextPoint;
 
-    private void FixedUpdate()
-    {
-        if(targetPosition == Vector2.zero)
+        // Start is called before the first frame update
+        void Start()
         {
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+
+            electric = false;
+
+            nextPoint = 0;
         }
 
-        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        private void FixedUpdate()
         {
-            nextPoint = updateTargetPoint(nextPoint);
-            goToTarget(targetPosition);
+            if(targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
 
-    }
-
-    void Update()
-    {
-
-
-    }
-
-    public override void IfdarkMode(bool dark)
-    {
-        if (dark == true)
+        void Update()
         {
-            sleep = true;
-        }
-    }
 
-    // Enlever car faisant faire des jumps durant le déplacement
-    /*
+
+        }
+
+        public override void IfdarkMode(bool dark)
+        {
+            if (dark == true)
+            {
+                sleep = true;
+            }
+        }
+
+        // Enlever car faisant faire des jumps durant le dï¿½placement
+        /*
     public Vector2 Seek(Vector2 target)
     {
         Vector2 desiredVelocity = target - (Vector2)transform.position;
@@ -67,4 +66,5 @@ public class Godzilla : Monster
 
 
 
+    }
 }

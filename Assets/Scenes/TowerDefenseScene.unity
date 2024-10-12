@@ -2678,10 +2678,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveWidget: {fileID: 1020055049}
   waves:
-  - {fileID: 11400000, guid: 2ecac0769edd29d4bbb2344f47cc076e, type: 2}
   - {fileID: 11400000, guid: 8385eea902b7bfd4f8d71e5e6be49310, type: 2}
   - {fileID: 11400000, guid: 0ca602cae42dd14478d76627197b9345, type: 2}
   - {fileID: 11400000, guid: 8130327bc71c0f849b8b3a1cebf7716e, type: 2}
+  - {fileID: 11400000, guid: 2ecac0769edd29d4bbb2344f47cc076e, type: 2}
   currentWave: {fileID: 0}
 --- !u!4 &2049927436
 Transform:

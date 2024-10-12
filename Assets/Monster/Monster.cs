@@ -2,23 +2,24 @@ using UnityEngine;
 
 namespace Monster
 {
-    // Variables
-    public int life;
-    public int power;
-    public bool sleep;
-    public bool electric;
-    public bool dark;
-    public Collider2D Collider2D;
-    public Vector2 targetPosition;
-
-    // TODO : Ajuster vitesse
-    public Vector2 velocity;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Monster : MonoBehaviour
     {
-        GetComponent<Animator>().SetBool("Electric", electric);
-        Collider2D = GetComponent<Collider2D>();
+        // Variables
+        public int life;
+        public int power;
+        public bool sleep;
+        public bool electric;
+        public bool dark;
+        public Vector2 targetPosition;
+
+        // TODO : Ajuster vitesse
+        public float speed = 500.0f;
+        public Vector2 velocity;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            GetComponent<Animator>().SetBool("Electric", electric);
 
             MapManager.mapManager.setList();
         }
@@ -69,4 +70,3 @@ namespace Monster
          }
     }
 }
-

@@ -13,7 +13,6 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sleep = false;
         GetComponent<Animator>().SetBool("Electric", electric);
     }
 
@@ -26,11 +25,11 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetInteger("Life", life);
     }
 
-    public void IfdarkMode(bool dark)
+    public virtual void IfdarkMode(bool dark)
     {
         if(dark == true)
         {
-            sleep = true;
+            sleep = false;
         }
     }
 

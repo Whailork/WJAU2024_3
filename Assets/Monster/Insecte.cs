@@ -8,7 +8,7 @@ public class Insecte : Monster
     // Start is called before the first frame update
     void Start()
     {
-        electric = true;
+
     }
 
     // Update is called once per frame
@@ -25,14 +25,6 @@ public class Insecte : Monster
     //    }
     //}
 
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            IseAnimateSleep();
-            sleep = false;
-        }
-    }
 
     public void IfElectric()
     {

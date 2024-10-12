@@ -581,7 +581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 593790586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 593790588}
+        m_TargetAssemblyTypeName: TowerIconScript, Assembly-CSharp
+        m_MethodName: OnMouseDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &593790586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +923,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 765841786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 765841788}
+        m_TargetAssemblyTypeName: TowerIconScript, Assembly-CSharp
+        m_MethodName: OnMouseDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &765841786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,9 +1177,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1887541873}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TowerIconClicked
+      - m_Target: {fileID: 1022921260}
+        m_TargetAssemblyTypeName: TowerIconScript, Assembly-CSharp
+        m_MethodName: OnMouseDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1783,7 +1807,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1589522133}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589522135}
+        m_TargetAssemblyTypeName: TowerIconScript, Assembly-CSharp
+        m_MethodName: OnMouseDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1589522133
 MonoBehaviour:
   m_ObjectHideFlags: 0

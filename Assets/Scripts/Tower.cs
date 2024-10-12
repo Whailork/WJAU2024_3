@@ -17,7 +17,6 @@ public class Tower : MonoBehaviour, ITower
     public int donutTowerGrandRayon;
     public float distance;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -32,9 +31,12 @@ public class Tower : MonoBehaviour, ITower
     void SpawnProjectile()
     {
         Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+
         // TODO : Decommenter
-        // projectile.setTarget(targetMonster.transform.position);
+        //projectileInstance.goToTarget(targetMonster.transform.position);
     }
 
-    public void attack() { }
+    public void attack() {
+
+    }
 }

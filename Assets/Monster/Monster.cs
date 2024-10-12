@@ -31,8 +31,7 @@ public class Monster : MonoBehaviour
 
     protected void goToTarget(Vector2 target)
     {
-        float maxDistance = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
+        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -74,6 +73,4 @@ public class Monster : MonoBehaviour
         life -= attack;
         return life;
     }
-    
-
 }

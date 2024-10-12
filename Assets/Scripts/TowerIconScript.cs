@@ -11,7 +11,7 @@ public class TowerIconScript : MonoBehaviour
     public void OnMouseDown()
     {
         GameManager.gameManager.selectedTower = towerType;
-        Debug.Log(towerType);
+        //Debug.Log(towerType);
         GameManager.gameManager.TowerIconClicked();
     }
 

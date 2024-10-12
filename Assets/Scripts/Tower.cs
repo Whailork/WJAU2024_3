@@ -8,7 +8,6 @@ public class Tower : MonoBehaviour, ITower
     // References
     public Monster targetMonster;
     public Projectile projectile;
-    public GameManager gameManager;
 
     // Variables
     public float distance;

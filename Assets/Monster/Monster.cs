@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -72,5 +74,6 @@ public class Monster : MonoBehaviour
         life -= attack;
         return life;
     }
+    
 
 }

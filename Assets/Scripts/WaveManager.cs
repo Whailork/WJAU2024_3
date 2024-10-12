@@ -31,6 +31,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         wave = 0;
         BeginWave(wave);
     }
@@ -38,7 +39,17 @@ public class WaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isWaveSpawned() && GameManager.gameManager.enemies.Count == 0)
+        {
+            Debug.Log("newWave!");
+            wave++;
+            godzillaSpawned = 0;
+            serpentSpawned = 0;
+            moustiqueSpawned = 0;
+            manteSpawned = 0;
+            
+            BeginWave(wave);
+        }
         
     }
 
@@ -162,9 +173,7 @@ public class WaveManager : MonoBehaviour
             {
                 GenerateMonster(); 
             }
-
             
-
         }
 
     }

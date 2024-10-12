@@ -8,7 +8,8 @@ public class Tower : MonoBehaviour, ITower
     // References
     public Monster targetMonster;
     public Projectile projectile;
-
+    public GameObject upgradeMenu;
+    
     // Variables
     public float distance;
 
@@ -23,6 +24,11 @@ public class Tower : MonoBehaviour, ITower
 
     }
 
+    public void OnMouseDown()
+    {
+        
+            
+    }
     public void attack() {
 
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DonutTower : Tower
+public class RayonTower : Tower
 {
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class DonutTower : Tower
         /*
          distance = Vector2.Distance(this.position, monster.position);
 
-            if (distance ­< donutTowerGrandRayon && distance > donutTowerPetitRayon) {
+            if (distance ­< rayonTowerRayon) {
                 targetMonster = monster;
 
                 break;

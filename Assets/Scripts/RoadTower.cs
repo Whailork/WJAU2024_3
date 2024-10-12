@@ -9,14 +9,7 @@ public class RoadTower : Tower
     public int pointDeVie;
     public int infligedDamaged;
     public int nextPoint;
-    public Collider2D Collider2D;
-    public Rigidbody2D rb;
-
     public Vector2 targetPosition;
-    
-
-    // TODO : Ajuster vitesse
-    public float speed = 500.0f;
 
 
     void Start()
@@ -36,6 +29,7 @@ public class RoadTower : Tower
         */
     }
 
+    /*
     void Awake()
     {
         Collider2D = GetComponent<Collider2D>();
@@ -46,6 +40,7 @@ public class RoadTower : Tower
 
         rb.isKinematic = false;
     }
+    */
 
     private void FixedUpdate()
     {
@@ -62,27 +57,6 @@ public class RoadTower : Tower
             nextPoint = updateTargetPoint(nextPoint);
             goToTarget(targetPosition);
         }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision with Monster");
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // TODO : voir comment envoyer le message d'apply damage
-            collision.gameObject.SendMessage("ApplyDamage", 10);
-
-            Debug.Log("Collision with Monster");
-
-            // TODO : redefinir la descente des pdv
-            pointDeVie -= 10;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     protected void goToTarget(Vector2 target)

@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
+    // Reference
     public static MapManager mapManager;
+
+    // Variables
+    public List<Vector2> pointsRepere;
+    public List<Vector2> pointsInverse;
+
     private void Awake()
     {
         if (mapManager == null)
@@ -20,7 +26,7 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.gameManager.pointsRepere.Clear();
+        pointsRepere.Clear();
     }
 
     void Update()
@@ -30,7 +36,7 @@ public class MapManager : MonoBehaviour
 
     void addPoint(Vector2 point)
     {
-        GameManager.gameManager.pointsRepere.Add(point);
+        pointsRepere.Add(point);
     }
 
     List<Vector2> getPath(GameObject gameObject)
@@ -38,15 +44,17 @@ public class MapManager : MonoBehaviour
         // Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
         // projectileInstance.goToTarget(targetMonster.transform.position);
 
+        pointsInverse = pointsRepere;
+        pointsInverse.Reverse();
+
         if (gameObject.GetType() == typeof(Monster))
         {
-            return GameManager.gameManager.pointsRepere;
+            return pointsRepere;
         }
 
         else if (gameObject.GetType() == typeof(RoadTower))
         {
-            GameManager.gameManager.pointsRepere.Reverse();
-            return GameManager.gameManager.pointsRepere;
+            return pointsInverse;
         }
         else
         {

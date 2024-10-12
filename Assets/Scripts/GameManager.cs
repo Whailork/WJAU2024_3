@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
     public Action onStartEditMode;
     public Action onStopEditMode;
 
-    // Ajouter par coco
-    public List<Vector2> pointsRepere;
-
     private void Awake()
     {
         if (gameManager == null)

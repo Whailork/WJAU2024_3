@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int Hp;
     public int money;
     public string selectedTower;
+    private bool editMode;
     public Action onStartEditMode;
     public Action onStopEditMode;
 
@@ -26,6 +28,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
+        //Debug.Log("initiate edit mode");
+        onStartEditMode += OnStartEditMode;
+        onStopEditMode += OnStopEditMode;
 
     }
 
@@ -36,18 +42,12 @@ public class GameManager : MonoBehaviour
 
     public void OnStartEditMode()
     {
-        
+        editMode = true;
     }
 
     public void OnStopEditMode()
     {
-        
-    }
-
-    private void OnEnable()
-    {
-        onStartEditMode += OnStartEditMode;
-        onStopEditMode += OnStopEditMode;
+        editMode = false;
     }
 
     private void OnDisable()
@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         onStopEditMode -= OnStopEditMode;
     }
 
-    public void TourPlaced()
+    public void StopEdit()
     {
-        Debug.Log("tour placed");
+        //Debug.Log("tour placed");
         selectedTower = "";
         onStopEditMode?.Invoke();
     }
@@ -72,6 +72,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (editMode)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            { 
+                onStopEditMode?.Invoke();
+            
+            }
+        }
         
     }
 }

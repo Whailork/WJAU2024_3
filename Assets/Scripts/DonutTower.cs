@@ -17,7 +17,7 @@ public class DonutTower : Tower
     // Update is called once per frame
     void Update()
     {
-        // Check if lorsque ennemie est détruit targetMonster = null?
+        // Check if lorsque ennemie est dï¿½truit targetMonster = null?
         if (targetMonster == null || targetOutOfRange())
         {
             Attack();
@@ -26,7 +26,7 @@ public class DonutTower : Tower
 
     void Attack()
     {
-        foreach (Monster enemy in gameManager.enemies)
+        foreach (Monster enemy in GameManager.gameManager.enemies)
         {
             distance = Vector2.Distance(this.transform.position, enemy.transform.position);
 

@@ -16,7 +16,7 @@ public class RayonTower : Tower
 
     void Update()
     {
-        // Check if lorsque ennemie est détruit targetMonster = null?
+        // Check if lorsque ennemie est dï¿½truit targetMonster = null?
         if (targetMonster == null || targetOutOfRange()) {
             Attack();
         }
@@ -25,7 +25,7 @@ public class RayonTower : Tower
 
     void Attack()
     {
-        foreach (Monster enemy in gameManager.enemies)
+        foreach (Monster enemy in GameManager.gameManager.enemies)
         {
             distance = Vector2.Distance(this.transform.position, enemy.transform.position);
 
@@ -37,7 +37,7 @@ public class RayonTower : Tower
         }
     }
 
-    // TODO : if targetMonster sort du rayon ou si est détruit targetMonster = null
+    // TODO : if targetMonster sort du rayon ou si est dï¿½truit targetMonster = null
     bool targetOutOfRange()
     {
         distance = Vector2.Distance(this.transform.position, targetMonster.transform.position);

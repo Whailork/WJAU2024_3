@@ -1,79 +1,76 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Monster : MonoBehaviour
+namespace Monster
 {
-    // Variables
-    public int life;
-    public int power;
-    public bool sleep;
-    public bool electric;
-
-    
-    public Vector2 targetPosition;
-
-    // TODO : Ajuster vitesse
-    public float speed = 500.0f;
-    public Vector2 velocity;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Monster : MonoBehaviour
     {
-        sleep = false;
-        GetComponent<Animator>().SetBool("Electric", electric);
+        // Variables
+        public int life;
+        public int power;
+        public bool sleep;
+        public bool electric;
+        public bool dark;
+        public Vector2 targetPosition;
 
-        MapManager.mapManager.setList();
-    }
+        // TODO : Ajuster vitesse
+        public float speed = 500.0f;
+        public Vector2 velocity;
 
-    protected void goToTarget(Vector2 target)
-    {
-        float maxDistance = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Speed", speed);
-        GetComponent<Animator>().SetBool("Sleep", sleep);
-        GetComponent<Animator>().SetInteger("Life", life);
-    }
-
-    public int updateTargetPoint(int nextPoint)
-    {
-        float distance = Vector2.Distance(transform.position, targetPosition);
-
-        if (distance <= 0.1)
+        // Start is called before the first frame update
+        void Start()
         {
-            nextPoint++;
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            GetComponent<Animator>().SetBool("Electric", electric);
+
+            MapManager.mapManager.setList();
         }
 
-        return nextPoint;
-    }
-
-    public void IfdarkMode(bool dark)
-    {
-        if(dark == true)
+        protected void goToTarget(Vector2 target)
         {
-            sleep = true;
+            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
+        }
+
+        // Update is called once per frame
+        void FixedUpdate()
+        {
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
+            GetComponent<Animator>().SetBool("Dark", dark);
+        }
+
+        public int updateTargetPoint(int nextPoint)
+        {
+            float distance = Vector2.Distance(transform.position, targetPosition);
+
+            if (distance <= 0.1)
+            {
+                nextPoint++;
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+   
+            return nextPoint;
+        }
+ public void IsDead()
+    {
+        if (life <= 0)
+        {
+            //Monster.Destroy();
         }
     }
 
-    public int GetPower() { return power; }
+        public int GetPower() { return power; }
 
-    public int GetLife() { return life; }
+        public int GetLife() { return life; }
 
-    public int DamageLife(int attack)
-    {
-        life -= attack;
-        return life;
+        public int DamageLife(int attack)
+        {
+            
+            life -= attack;
+            Debug.Log(life);
+            return life;
+            
+        }
     }
-    
 
 }

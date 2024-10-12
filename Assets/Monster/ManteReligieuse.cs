@@ -1,75 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ManteReligieuse : Monster
+namespace Monster
 {
-
-    //public ManteReligieuse() { life = 150; power = 50; sleep = false; electric = true; }
-
-    // Start is called before the first frame update
-    void Start()
+    public class ManteReligieuse : Monster
     {
-        electric = true;
-    }
+        public int nextPoint;
+        //public ManteReligieuse() { life = 150; power = 50; sleep = false; electric = true; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        MRAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
+        // Start is called before the first frame update
+        void Start()
         {
-            MRAnimateSleep();
-            sleep = false;
-        }
-    }
 
-    public void IfElectric()
-    {
-        if (electric == true)
+        }
+
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            MRAnimateElec();
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
-    }
 
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            MRAnimateDead();
-        }
-    }
-
-    public void MRAnimateMove()
-    {
 
     }
-
-    public void MRAnimateSleep()
-    {
-
-    }
-
-    public void MRAnimateElec()
-    {
-
-    }
-
-    public void MRAnimateDead()
-    {
-
-    }
-
 }

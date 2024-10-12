@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7248703046780793824}
   - component: {fileID: 491368502922713189}
   - component: {fileID: 7977739714725722117}
+  - component: {fileID: -5501851710938289373}
   m_Layer: 0
   m_Name: DonutTowerPrefab
   m_TagString: Untagged
@@ -27,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 2238883494924062229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1296237, y: -0.08759667, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.2365, y: -0.6042, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7fa4b04e9ea3a05448c86a2b9ab5e4f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b89f805ba5ad4af4195eb5644184c2d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,6 +100,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
+  upgradeMenu: {fileID: 0}
   distance: 0
-  petitRayon: 0
-  grandRayon: 0
+  fireRate: 4
+  power: 50
+  petitRayon: 2
+  grandRayon: 5
+--- !u!95 &-5501851710938289373
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238883494924062229}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c911c09898ab384fadb9b305ced3d7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

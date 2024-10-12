@@ -10,94 +10,49 @@ public class Godzilla : Monster
     //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
     // Variables
-    int nextPoint;
-    Vector2 targetPosition;
-
-    // References
-    Godzilla godzillaInstance;
-
+    public int nextPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         electric = false;
 
-        Debug.Log("Godzilla start");
-
-        //MapManager.mapManager.getPath();
-
-        // Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
-        // projectileInstance.goToTarget(targetMonster.transform.position);
-
         nextPoint = 0;
-        //targetPosition
+    }
 
-        targetPosition = MapManager.mapManager.pointsRepere[0];
-        godzillaInstance = Instantiate(this, transform.position, Quaternion.identity);
-        move();
+    private void FixedUpdate()
+    {
+        if(targetPosition == Vector2.zero)
+        {
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        }
+
+        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        {
+            nextPoint = updateTargetPoint(nextPoint);
+            goToTarget(targetPosition);
+        }
     }
 
     void Update()
     {
-        updateTargetPoint();
+
     }
 
-    protected void goToTarget(Vector2 target)
-    {
-        float maxDistance = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
-    }
-
-    private void move()//OnAnimatorMove()
-    {
-        godzillaInstance.goToTarget(targetPosition);
-    }
-
-    private void updateTargetPoint()
-    {
-        float distance = Vector2.Distance(transform.position, targetPosition);
-
-        if (distance <= 0.25)
-        {
-            nextPoint++;
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
-            //move();
-        }
-    }
-
+    // Enlever car faisant faire des jumps durant le déplacement
     /*
-    void AEntityCharacter::MoveTo(FVector Location)
+    public Vector2 Seek(Vector2 target)
     {
-        MovementComponent->AddInputVector(Location);
-    }
-
-    FVector AEntityCharacter::Seek(FVector Target)
-    {
-        FVector DesiredVelocity = Target - GetActorLocation();
-        DesiredVelocity.Normalize();
-        DesiredVelocity *= MovementComponent->GetMaxSpeed();
-
-        FVector Steering = DesiredVelocity - MovementComponent->Velocity;
-        Steering = Steering.GetClampedToMaxSize(MovementComponent->GetMaxSpeed());
-
-        return Steering;
-    }
-    */
-
-    public float maxSpeed = 10f; // Vitesse maximale de l'entité
-    public Vector2 velocity;     // Vitesse actuelle de l'entité (à remplacer par ton propre composant de mouvement si besoin)
-
-    public Vector2 Seek(Vector3 target)
-    {
-        Vector2 desiredVelocity = target - transform.position;
+        Vector2 desiredVelocity = target - (Vector2)transform.position;
         desiredVelocity.Normalize();
-        desiredVelocity *= maxSpeed;
+        desiredVelocity *= speed;
 
-        Vector3 steering = desiredVelocity - velocity;
-        steering = Vector2.ClampMagnitude(steering, maxSpeed);
+        Vector2 steering = desiredVelocity - velocity;
+        steering = Vector2.ClampMagnitude(steering, speed);
 
         return steering;
     }
+    */
 
 
     //public void IfMove()

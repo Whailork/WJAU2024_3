@@ -7,26 +7,34 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     private bool isOccupied;
-
-    private ITower tower;
+    public RayonTower RayonPrefab;
+    public DonutTower DonutPrefab;
+    private Tower tower;
+    public Vector3 pos;
     
     // Start is called before the first frame update
     
     public void OnMouseDown()
     {
+        if (isOccupied)
+        {
+            return;
+        }
         if (GameManager.gameManager.selectedTower != "")
         {
-            GameManager.gameManager.TourPlaced();
+            
+            
             isOccupied = true;
             switch (GameManager.gameManager.selectedTower)
             {
             
                 case "Donut":
-                
-                    //tower = Instantiate(); on instancie avec ressource.load
+                    Debug.Log("Donut");
+                    tower = Instantiate(DonutPrefab,pos,Quaternion.identity); 
                     break;
                 case "Rayon":
-                    //tower = Instantiate();
+                    Debug.Log("rayon");
+                    tower = Instantiate(RayonPrefab,pos,Quaternion.identity); 
                     break;
                 case "Road":
                     //tower = Instantiate();
@@ -36,6 +44,7 @@ public class Tile : MonoBehaviour
                     break;
             
             }
+            GameManager.gameManager.StopEdit();
             // reset selectedTower
             
 
@@ -45,8 +54,7 @@ public class Tile : MonoBehaviour
 
     public void OnEnable()
     {
-        GameManager.gameManager.onStartEditMode += OnStartEditMode;
-        GameManager.gameManager.onStopEditMode += OnStopEditMode;
+        
 
     }
     
@@ -67,6 +75,7 @@ public class Tile : MonoBehaviour
 
     public void OnStopEditMode()
     {
+        Debug.Log("color white");
         GetComponent<SpriteRenderer>().color = Color.white;
     }
     public void OnDisable()
@@ -76,7 +85,10 @@ public class Tile : MonoBehaviour
     }
     void Start()
     {
-        
+        pos = GetComponent<Transform>().position;
+        GameManager.gameManager.onStartEditMode += OnStartEditMode;
+        GameManager.gameManager.onStopEditMode += OnStopEditMode;
+
     }
 
     // Update is called once per frame

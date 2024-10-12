@@ -1,38 +1,51 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class RayonTower : Tower
 {
-    // Start is called before the first frame update
+    // Variables
+    public int rayonTowerRayon;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Check if lorsque ennemie est dï¿½truit targetMonster = null?
+        if (targetMonster == null || targetOutOfRange()) {
+            Attack();
+        }
+
     }
 
     void Attack()
     {
-
-        // string => Monster
-        foreach (string enemy in gameManager.enemies)
+        foreach (Monster enemy in GameManager.gameManager.enemies)
         {
-            // TODO : calculer distance
-        }
+            distance = Vector2.Distance(this.transform.position, enemy.transform.position);
 
-        /*
-         distance = Vector2.Distance(this.position, monster.position);
-
-            if (distance ­< rayonTowerRayon) {
-                targetMonster = monster;
-
+            if (distance < rayonTowerRayon)
+            {
+                targetMonster = enemy;
                 break;
             }
-         */
+        }
+    }
+
+    // TODO : if targetMonster sort du rayon ou si est dï¿½truit targetMonster = null
+    bool targetOutOfRange()
+    {
+        distance = Vector2.Distance(this.transform.position, targetMonster.transform.position);
+
+        if (distance > rayonTowerRayon)
+        {
+            return true;
+        }
+        return false;
     }
 }

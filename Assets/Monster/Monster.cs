@@ -65,8 +65,12 @@ namespace Monster
 
         public int DamageLife(int attack)
         {
+            
             life -= attack;
+            Debug.Log(life);
             return life;
-         }
+            
+        }
     }
+
 }

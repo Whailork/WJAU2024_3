@@ -102,8 +102,10 @@ MonoBehaviour:
   projectile: {fileID: 0}
   upgradeMenu: {fileID: 0}
   distance: 0
-  petitRayon: 0
-  grandRayon: 0
+  fireRate: 4
+  power: 50
+  petitRayon: 2
+  grandRayon: 5
 --- !u!95 &-5501851710938289373
 Animator:
   serializedVersion: 5

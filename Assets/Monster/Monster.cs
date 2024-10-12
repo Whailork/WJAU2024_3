@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,7 +11,6 @@ public class Monster : MonoBehaviour
     public int power;
     public bool sleep;
     public bool electric;
-
     
     public Vector2 targetPosition;
 
@@ -23,7 +21,6 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sleep = false;
         GetComponent<Animator>().SetBool("Electric", electric);
 
         MapManager.mapManager.setList();
@@ -56,11 +53,11 @@ public class Monster : MonoBehaviour
         return nextPoint;
     }
 
-    public void IfdarkMode(bool dark)
+    public virtual void IfdarkMode(bool dark)
     {
         if(dark == true)
         {
-            sleep = true;
+            sleep = false;
         }
     }
 

@@ -9,7 +9,7 @@ namespace Monster
         public int power;
         public bool sleep;
         public bool electric;
-    
+        public bool dark;
         public Vector2 targetPosition;
 
         // TODO : Ajuster vitesse
@@ -26,8 +26,7 @@ namespace Monster
 
         protected void goToTarget(Vector2 target)
         {
-            float maxDistance = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
+            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
         }
 
         // Update is called once per frame
@@ -37,6 +36,7 @@ namespace Monster
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
+            GetComponent<Animator>().SetBool("Dark", dark);
         }
 
         public int updateTargetPoint(int nextPoint)
@@ -48,17 +48,16 @@ namespace Monster
                 nextPoint++;
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
-
+   
             return nextPoint;
         }
-
-        public virtual void IfdarkMode(bool dark)
+ public void IsDead()
+    {
+        if (life <= 0)
         {
-            if(dark == true)
-            {
-                sleep = false;
-            }
+            //Monster.Destroy();
         }
+    }
 
         public int GetPower() { return power; }
 
@@ -66,10 +65,12 @@ namespace Monster
 
         public int DamageLife(int attack)
         {
+            
             life -= attack;
+            Debug.Log(life);
             return life;
+            
         }
-    
-
     }
+
 }

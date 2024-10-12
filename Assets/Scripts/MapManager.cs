@@ -10,7 +10,6 @@ public class MapManager : MonoBehaviour
 
     // Variables
     public List<Vector2> pointsRepere;
-    public List<Vector2> pointsInverse;
 
     // Singleton
     private void Awake()
@@ -19,6 +18,9 @@ public class MapManager : MonoBehaviour
         {
             mapManager = this;
             DontDestroyOnLoad(this);
+
+            pointsRepere.Clear();
+            setList();
         }
         else
         {
@@ -28,8 +30,6 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
-        pointsRepere.Clear();
-        setList();
     }
 
     void Update()
@@ -40,12 +40,14 @@ public class MapManager : MonoBehaviour
     public void setList()
     {
         // TODO : if pathName = XXX, set those points
+        Vector2 p0 = new Vector2(-10.25f, 3.25f);
         Vector2 p1 = new Vector2(7.25f, 3.25f);
         Vector2 p2 = new Vector2(7.25f, 0.25f);
         Vector2 p3 = new Vector2(-7.75f, 0.25f);
         Vector2 p4 = new Vector2(-7.75f, -2.75f);
         Vector2 p5 = new Vector2(7.25f, -2.75f);
 
+        pointsRepere.Add(p0);
         pointsRepere.Add(p1);
         pointsRepere.Add(p2);
         pointsRepere.Add(p3);

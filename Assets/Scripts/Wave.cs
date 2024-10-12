@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+//using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Wave/new Wave",fileName = "wave0",order = 0)]

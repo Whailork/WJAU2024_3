@@ -10,15 +10,14 @@ public class CancelEditScript : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        GameManager.gameManager.onStartEditMode += setVisible;
+        GameManager.gameManager.onStopEditMode += setInvisible;
     }
 
-    public void OnEnable()
-    {
-        GameManager.gameManager.onStartEditMode += setVisible;
-    }
 
     public void OnDisable()
     {
+        GameManager.gameManager.onStartEditMode -= setVisible;
         GameManager.gameManager.onStopEditMode -= setInvisible;
     }
 

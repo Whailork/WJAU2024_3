@@ -1,75 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ManteReligieuse : Monster
 {
-
+    public int nextPoint;
     //public ManteReligieuse() { life = 150; power = 50; sleep = false; electric = true; }
 
     // Start is called before the first frame update
     void Start()
     {
-        electric = true;
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        MRAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
+        if (targetPosition == Vector2.zero)
         {
-            MRAnimateSleep();
-            sleep = false;
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
         }
-    }
 
-    public void IfElectric()
-    {
-        if (electric == true)
+        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
         {
-            MRAnimateElec();
+            nextPoint = updateTargetPoint(nextPoint);
+            goToTarget(targetPosition);
         }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            MRAnimateDead();
-        }
-    }
-
-    public void MRAnimateMove()
-    {
 
     }
 
-    public void MRAnimateSleep()
-    {
-
-    }
-
-    public void MRAnimateElec()
-    {
-
-    }
-
-    public void MRAnimateDead()
-    {
-
-    }
 
 }

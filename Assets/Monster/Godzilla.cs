@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -15,6 +15,7 @@ public class Godzilla : Monster
     // Start is called before the first frame update
     void Start()
     {
+
         electric = false;
 
         nextPoint = 0;
@@ -32,11 +33,21 @@ public class Godzilla : Monster
             nextPoint = updateTargetPoint(nextPoint);
             goToTarget(targetPosition);
         }
+
     }
 
     void Update()
     {
 
+
+    }
+
+    public override void IfdarkMode(bool dark)
+    {
+        if (dark == true)
+        {
+            sleep = true;
+        }
     }
 
     // Enlever car faisant faire des jumps durant le déplacement
@@ -53,47 +64,6 @@ public class Godzilla : Monster
         return steering;
     }
     */
-
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        GodAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            GodAnimateSleep();
-            sleep = false;
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            GodAnimateDead();
-        }
-    }
-
-    public void GodAnimateMove()
-    {
-
-    }
-
-    public void GodAnimateSleep()
-    {
-
-    }
-
-    public void GodAnimateDead()
-    {
-
-    }
 
 
 

@@ -16,4 +16,4 @@ MonoBehaviour:
   godzillaNb: 5
   serpentNb: 4
   moustiqueNb: 3
-  timeBetweenSpawns: 0.4
+  timeBetweenSpawns: 2

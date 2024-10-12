@@ -24,10 +24,10 @@ namespace Monster
             MapManager.mapManager.setList();
         }
 
-    protected void goToTarget(Vector2 target)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
-    }
+        protected void goToTarget(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
+        }
 
         // Update is called once per frame
         void FixedUpdate()
@@ -63,9 +63,14 @@ namespace Monster
 
         public int GetLife() { return life; }
 
-    public int DamageLife(int attack)
-    {
-        life -= attack;
-        return life;
+        public int DamageLife(int attack)
+        {
+            
+            life -= attack;
+            Debug.Log(life);
+            return life;
+            
+        }
     }
+
 }

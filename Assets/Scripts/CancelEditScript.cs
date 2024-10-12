@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+// using Unity.VisualScripting;
 using UnityEngine;
 
 public class CancelEditScript : MonoBehaviour
@@ -15,11 +15,12 @@ public class CancelEditScript : MonoBehaviour
     }
 
 
-    public void OnDisable()
+    public void OnDestroy()
     {
         GameManager.gameManager.onStartEditMode -= setVisible;
         GameManager.gameManager.onStopEditMode -= setInvisible;
     }
+
 
     public void OnBtnPressed()
     {

@@ -16,6 +16,11 @@ namespace Monster
         public float speed = 500.0f;
         public Vector2 velocity;
 
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("CollisionEnter_monster");
+        }
+
         // Start is called before the first frame update
         void Start()
         {

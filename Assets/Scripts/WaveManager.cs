@@ -15,6 +15,11 @@ public class WaveManager : MonoBehaviour
     private int serpentSpawned;
     private int moustiqueSpawned;
     private int manteSpawned;
+
+    public Godzilla godzillaReference;
+    public Serpent serpentReference;
+    public Insecte moustiqueReference;
+    public ManteReligieuse manteReference;
     private void Awake()
     {
         if (waveManager == null)
@@ -142,7 +147,7 @@ public class WaveManager : MonoBehaviour
         {
             case 0:
                 godzillaSpawned++;
-                Debug.Log("gozilla");
+                
                 break;
             case 1:
                 serpentSpawned++;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private List<string> towers; // Towers
     private int Hp;
     private int money;
+    private string selectedTower;
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+
 
     // Start is called before the first frame update
     void Start()

@@ -48,9 +48,16 @@ namespace Monster
                 nextPoint++;
                 targetPosition = MapManager.mapManager.transform.position;
             }
-
+   
             return nextPoint;
         }
+ public void IsDead()
+    {
+        if (life <= 0)
+        {
+            //Monster.Destroy();
+        }
+    }
 
         public int GetPower() { return power; }
 
@@ -60,6 +67,6 @@ namespace Monster
         {
             life -= attack;
             return life;
-        }
+         }
     }
 }

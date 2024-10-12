@@ -10,7 +10,8 @@ public class TowerIconScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        
+        GameManager.gameManager.selectedTower = towerType;
+        GameManager.gameManager.TowerIconClicked();
     }
 
     void Start()

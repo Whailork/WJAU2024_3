@@ -27,13 +27,6 @@ public class Godzilla : Monster
         }
     }
 
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        GodAnimateMove();
-    //    }
-    //}
 
     public void IfSleep()
     {

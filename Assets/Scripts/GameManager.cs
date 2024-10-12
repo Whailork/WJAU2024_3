@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +13,9 @@ public class GameManager : MonoBehaviour
     public string selectedTower;
     public Action onStartEditMode;
     public Action onStopEditMode;
+
+    // Ajouter par coco
+    public List<Vector2> pointsRepere;
 
     private void Awake()
     {

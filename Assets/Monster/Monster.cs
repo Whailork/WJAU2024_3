@@ -50,6 +50,13 @@ namespace Monster
 
             return nextPoint;
         }
+    public void IsDead()
+    {
+        if (life <= 0)
+        {
+            //Monster.Destroy();
+        }
+    }
 
         public int GetPower() { return power; }
 

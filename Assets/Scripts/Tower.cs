@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour, ITower
 {
     // References
-    //public Monster targetMonster;
+    public string targetMonster; // TODO : string => Monster
     public Projectile projectile;
     public GameManager gameManager;
 
@@ -30,11 +31,10 @@ public class Tower : MonoBehaviour, ITower
 
     void SpawnProjectile()
     {
-
+        Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+        // TODO : Decommenter
+        // projectile.setTarget(targetMonster.transform.position);
     }
 
-    void Attack()
-    {
-        //projectile.moveto = targetMonster.position;
-    }
+    public void attack() { }
 }

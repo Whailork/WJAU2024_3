@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // TODO : Ajuster vitesse
+    private float speed = 10.0f;
+    private Vector2 targetPosition;
+
     void Start()
     {
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 
+    public void setTarget(Vector2 target)
+    {
+        targetPosition = target;
+    }
+
+    void goToTarget()
+    {
+        float maxDistance = speed * Time.deltaTime;
+
+        // TODO : decommenter
+        //transform.position = Vector2.MoveTowards(transform.position, targetPosition, maxDistance);
+    }
 }

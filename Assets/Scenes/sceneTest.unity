@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1190835223}
   - component: {fileID: 1190835224}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Godzilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 1190835219}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.57, y: 3.38, z: 0}
+  m_LocalPosition: {x: -7.25, y: 3.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,7 +253,6 @@ MonoBehaviour:
   sleep: 0
   electric: 0
   speed: 10
-  maxSpeed: 10
   velocity: {x: 0, y: 0}
 --- !u!95 &1190835224
 Animator:

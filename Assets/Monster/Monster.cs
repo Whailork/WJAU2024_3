@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -11,8 +13,12 @@ public class Monster : MonoBehaviour
     public bool sleep;
     public bool electric;
 
+    
+    public Vector2 targetPosition;
+
     // TODO : Ajuster vitesse
-    public float speed = 10.0f;
+    public float speed = 500.0f;
+    public Vector2 velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +29,12 @@ public class Monster : MonoBehaviour
         MapManager.mapManager.setList();
     }
 
+    protected void goToTarget(Vector2 target)
+    {
+        float maxDistance = speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -30,6 +42,19 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetFloat("Speed", speed);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
+    }
+
+    public int updateTargetPoint(int nextPoint)
+    {
+        float distance = Vector2.Distance(transform.position, targetPosition);
+
+        if (distance <= 0.1)
+        {
+            nextPoint++;
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        }
+
+        return nextPoint;
     }
 
     public void IfdarkMode(bool dark)
@@ -49,5 +74,6 @@ public class Monster : MonoBehaviour
         life -= attack;
         return life;
     }
+    
 
 }

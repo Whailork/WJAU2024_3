@@ -8,6 +8,7 @@ public class Monster : MonoBehaviour
     protected int power;
     protected bool sleep;
     protected bool electric;
+    protected Vector2 position;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +22,12 @@ public class Monster : MonoBehaviour
         
     }
 
-    public void IfSleepIsTrue()
+    public void IfdarkMode(bool dark)
     {
-        if (sleep == true)
+        if(dark == true)
         {
-            //AnimationSleep();
-            sleep = false;
+            sleep = true;
         }
-    }
-
-    public void IfdarkMode()
-    {
-        sleep = true;
     }
 
     public int GetPower() { return power; }

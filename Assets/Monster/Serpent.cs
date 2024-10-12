@@ -19,6 +19,44 @@ public class Serpent : Monster
         
     }
 
+    public void IfMove()
+    {
+        if (position.x != 0 || position.y != 0)
+        {
+            SepAnimateMove();
+        }
+    }
 
+    public void IfSleep()
+    {
+        if (sleep == true)
+        {
+            SepAnimateSleep();
+            sleep = false;
+        }
+    }
+
+    public void IfLifeZero()
+    {
+        if (life == 0)
+        {
+            SepAnimateDead();
+        }
+    }
+
+    public void SepAnimateMove()
+    {
+
+    }
+
+    public void SepAnimateSleep()
+    {
+
+    }
+
+    public void SepAnimateDead()
+    {
+
+    }
 
 }

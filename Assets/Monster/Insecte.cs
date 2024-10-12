@@ -5,13 +5,7 @@ using UnityEngine;
 public class Insecte : Monster
 {
 
-    public Insecte()
-    {
-        life = 50;
-        power = 5;
-        sleep = false;
-        electric = true;
-    }
+    public Insecte() { life = 50; power = 5; sleep = false; electric = true; }
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +16,60 @@ public class Insecte : Monster
     // Update is called once per frame
     void Update()
     {
-        //Change_Sleep();
+       
+    }
+
+    public void IfMove()
+    {
+        if (position.x != 0 || position.y != 0)
+        {
+            IseAnimateMove();
+        }
+    }
+
+    public void IfSleep()
+    {
+        if (sleep == true)
+        {
+            IseAnimateSleep();
+            sleep = false;
+        }
+    }
+
+    public void IfElectric()
+    {
+        if (electric == true)
+        {
+            IseAnimateElec();
+        }
+    }
+
+    public void IfLifeZero()
+    {
+        if (life == 0)
+        {
+            IseAnimateDead();
+        }
+    }
+
+    public void IseAnimateMove()
+    {
+
+    }
+
+    public void IseAnimateSleep()
+    {
+
+    }
+
+    public void IseAnimateElec()
+    {
+
+    }
+
+    public void IseAnimateDead()
+    {
+
     }
 
 }

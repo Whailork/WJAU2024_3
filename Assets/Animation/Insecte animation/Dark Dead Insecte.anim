@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dead Mante
+  m_Name: Dark Dead Insecte
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 8962d0d8fd846354dad3230b1241db1b, type: 3}
+      value: {fileID: 21300000, guid: 4875e8367b2e0bc4c8c62416435e31dd, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 5cb13451847201443b05c505ae99e3f1, type: 3}
+      value: {fileID: 21300000, guid: 901b478f661b2f941b308df81597d1e9, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: e543116ec772e6049a2223ce82495a14, type: 3}
+      value: {fileID: 21300000, guid: 9f92c08bbb844584bba6f8bd349f5d41, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: ddde235915e002a4590264c809a5333d, type: 3}
+      value: {fileID: 21300000, guid: 09f7f8ca935d9be4dad4651306a7139b, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 1ad8cb02dda9e924fa07901fe1c4addf, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: 37c0c87e066316e46964151b5a34bc24, type: 3}
+      value: {fileID: 21300000, guid: e05b5a8a23eae8d4c86a813626b6b251, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: 75ac0408a6404f94ca74411c70c80bb2, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 20c8d07a8d99f7140a7b0fa2176d7586, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: 6f643a9ec703c524ebdc9fe0a05168fb, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: c4adffa85e512b342b9eed1981243208, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,18 +60,21 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 8962d0d8fd846354dad3230b1241db1b, type: 3}
-    - {fileID: 21300000, guid: 5cb13451847201443b05c505ae99e3f1, type: 3}
-    - {fileID: 21300000, guid: e543116ec772e6049a2223ce82495a14, type: 3}
-    - {fileID: 21300000, guid: ddde235915e002a4590264c809a5333d, type: 3}
-    - {fileID: 21300000, guid: 1ad8cb02dda9e924fa07901fe1c4addf, type: 3}
-    - {fileID: 21300000, guid: 37c0c87e066316e46964151b5a34bc24, type: 3}
+    - {fileID: 21300000, guid: 4875e8367b2e0bc4c8c62416435e31dd, type: 3}
+    - {fileID: 21300000, guid: 901b478f661b2f941b308df81597d1e9, type: 3}
+    - {fileID: 21300000, guid: 9f92c08bbb844584bba6f8bd349f5d41, type: 3}
+    - {fileID: 21300000, guid: 09f7f8ca935d9be4dad4651306a7139b, type: 3}
+    - {fileID: 21300000, guid: e05b5a8a23eae8d4c86a813626b6b251, type: 3}
+    - {fileID: 21300000, guid: 75ac0408a6404f94ca74411c70c80bb2, type: 3}
+    - {fileID: 21300000, guid: 20c8d07a8d99f7140a7b0fa2176d7586, type: 3}
+    - {fileID: 21300000, guid: 6f643a9ec703c524ebdc9fe0a05168fb, type: 3}
+    - {fileID: 21300000, guid: c4adffa85e512b342b9eed1981243208, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4166667
+    m_StopTime: 0.68333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

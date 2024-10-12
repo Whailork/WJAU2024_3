@@ -22,7 +22,7 @@ namespace Monster
 
         private void FixedUpdate()
         {
-            if(targetPosition == Vector2.zero)
+            if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
@@ -38,33 +38,18 @@ namespace Monster
         void Update()
         {
 
-
         }
 
-        public override void IfdarkMode(bool dark)
+
+        public void IfdarkMode(bool dark)
         {
             if (dark == true)
             {
-                sleep = true;
+                if (dark == true)
+                {
+                    sleep = true;
+                }
             }
         }
-
-        // Enlever car faisant faire des jumps durant le d�placement
-        /*
-    public Vector2 Seek(Vector2 target)
-    {
-        Vector2 desiredVelocity = target - (Vector2)transform.position;
-        desiredVelocity.Normalize();
-        desiredVelocity *= speed;
-
-        Vector2 steering = desiredVelocity - velocity;
-        steering = Vector2.ClampMagnitude(steering, speed);
-
-        return steering;
-    }
-    */
-
-
-
     }
 }

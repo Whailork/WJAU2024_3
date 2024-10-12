@@ -15,11 +15,12 @@ public class CancelEditScript : MonoBehaviour
     }
 
 
-    public void OnDisable()
+    public void OnDestroy()
     {
         GameManager.gameManager.onStartEditMode -= setVisible;
         GameManager.gameManager.onStopEditMode -= setInvisible;
     }
+
 
     public void OnBtnPressed()
     {

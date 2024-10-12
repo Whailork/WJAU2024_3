@@ -36,7 +36,7 @@ public class Monster : MonoBehaviour
     void FixedUpdate()
     {
         float move = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Move", move);
+        GetComponent<Animator>().SetFloat("Speed", speed);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
     }

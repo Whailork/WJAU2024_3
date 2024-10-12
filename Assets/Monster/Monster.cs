@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Monster : MonoBehaviour
 {
+    // Variables
     public int life;
     public int power;
     public bool sleep;
     public bool electric;
-    
+
+    // TODO : Ajuster vitesse
+    public float speed = 10.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         sleep = false;
         GetComponent<Animator>().SetBool("Electric", electric);
+
+        MapManager.mapManager.setList();
     }
 
     // Update is called once per frame

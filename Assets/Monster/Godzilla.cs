@@ -22,7 +22,7 @@ namespace Monster
 
         private void FixedUpdate()
         {
-            if(targetPosition == Vector2.zero)
+            if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
@@ -38,18 +38,18 @@ namespace Monster
         void Update()
         {
 
-
-    public void IfdarkMode(bool dark)
-    {
-        if (dark == true)
-        {
-            if (dark == true)
-            {
-                sleep = true;
-            }
         }
 
 
-
-
+        public void IfdarkMode(bool dark)
+        {
+            if (dark == true)
+            {
+                if (dark == true)
+                {
+                    sleep = true;
+                }
+            }
+        }
+    }
 }

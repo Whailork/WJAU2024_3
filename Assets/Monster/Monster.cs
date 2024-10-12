@@ -2,13 +2,15 @@ using UnityEngine;
 
 namespace Monster
 {
-    // Variables
-    public int life;
-    public int power;
-    public bool sleep;
-    public bool electric;
-    public bool dark;
-    public Vector2 targetPosition;
+    public class Monster : MonoBehaviour
+    {
+        // Variables
+        public int life;
+        public int power;
+        public bool sleep;
+        public bool electric;
+        public bool dark;
+        public Vector2 targetPosition;
 
         // TODO : Ajuster vitesse
         public float speed = 500.0f;
@@ -22,46 +24,43 @@ namespace Monster
             MapManager.mapManager.setList();
         }
 
-    protected void goToTarget(Vector2 target)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
-    }
+        protected void goToTarget(Vector2 target)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
+        }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Speed", speed);
-        GetComponent<Animator>().SetBool("Sleep", sleep);
-        GetComponent<Animator>().SetInteger("Life", life);
-        GetComponent<Animator>().SetBool("Dark", dark);
-    }
-
-    public int updateTargetPoint(int nextPoint)
-    {
-        float distance = Vector2.Distance(transform.position, targetPosition);
-
-        if (distance <= 0.1)
+        // Update is called once per frame
+        void FixedUpdate()
         {
             float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
+            GetComponent<Animator>().SetBool("Dark", dark);
         }
 
         public int updateTargetPoint(int nextPoint)
         {
             float distance = Vector2.Distance(transform.position, targetPosition);
 
+            if (distance <= 0.1)
+            {
+                nextPoint++;
+                targetPosition = MapManager.mapManager.transform.position;
+            }
 
+            return nextPoint;
+        }
 
-    public int GetPower() { return power; }
+        public int GetPower() { return power; }
 
         public int GetLife() { return life; }
 
-    public int DamageLife(int attack)
-    {
-        life -= attack;
-        return life;
+        public int DamageLife(int attack)
+        {
+            life -= attack;
+            return life;
+         }
     }
 }
+

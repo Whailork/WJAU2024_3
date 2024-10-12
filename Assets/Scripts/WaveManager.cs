@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Monster;
-using Unity.Mathematics;
 //using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -151,24 +150,24 @@ public class WaveManager : MonoBehaviour
         {
             case 0:
                 godzillaSpawned++;
-                newMonster = Instantiate(godzillaReference, MapManager.mapManager.pointsRepere[0], quaternion.identity);
+                newMonster = Instantiate(godzillaReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 break;
             case 1:
                 serpentSpawned++;
-                newMonster = Instantiate(serpentReference, MapManager.mapManager.pointsRepere[0], quaternion.identity);
+                newMonster = Instantiate(serpentReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("serpent");
                 break;
             case 2:
                 moustiqueSpawned++;
-                newMonster = Instantiate(moustiqueReference, MapManager.mapManager.pointsRepere[0], quaternion.identity);
+                newMonster = Instantiate(moustiqueReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("moustique");
                 break;
             case 3:
                 manteSpawned++;
-                newMonster = Instantiate(manteReference, MapManager.mapManager.pointsRepere[0], quaternion.identity);
+                newMonster = Instantiate(manteReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("mante religieuse");
                 break;

@@ -19,14 +19,6 @@ public class ManteReligieuse : Monster
         
     }
 
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        MRAnimateMove();
-    //    }
-    //}
-
     public void IfSleep()
     {
         if (sleep == true)

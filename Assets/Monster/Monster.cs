@@ -8,7 +8,6 @@ public class Monster : MonoBehaviour
     public int power;
     public bool sleep;
     public bool electric;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -19,8 +18,8 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Speed", speed);
+        float move = GetComponent<Rigidbody2D>().velocity.magnitude;
+        GetComponent<Animator>().SetFloat("Move", move);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
     }

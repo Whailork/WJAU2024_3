@@ -8,8 +8,8 @@ public class Insecte : Monster
     public int nextPoint;
     // Start is called before the first frame update
     void Start()
-    {
-
+    { 
+        nextPoint = 0;
     }
 
     // Update is called once per frame
@@ -28,41 +28,5 @@ public class Insecte : Monster
 
     }
 
-
-    public void IfElectric()
-    {
-        if (electric == true)
-        {
-            IseAnimateElec();
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            IseAnimateDead();
-        }
-    }
-
-    public void IseAnimateMove()
-    {
-
-    }
-
-    public void IseAnimateSleep()
-    {
-
-    }
-
-    public void IseAnimateElec()
-    {
-
-    }
-
-    public void IseAnimateDead()
-    {
-
-    }
 
 }

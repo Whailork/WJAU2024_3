@@ -30,49 +30,5 @@ public class ManteReligieuse : Monster
 
     }
 
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            MRAnimateSleep();
-            sleep = false;
-        }
-    }
-
-    public void IfElectric()
-    {
-        if (electric == true)
-        {
-            MRAnimateElec();
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            MRAnimateDead();
-        }
-    }
-
-    public void MRAnimateMove()
-    {
-
-    }
-
-    public void MRAnimateSleep()
-    {
-
-    }
-
-    public void MRAnimateElec()
-    {
-
-    }
-
-    public void MRAnimateDead()
-    {
-
-    }
 
 }

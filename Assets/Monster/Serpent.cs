@@ -9,7 +9,9 @@ public class Serpent : Monster
     // Start is called before the first frame update
     void Start()
     {
- 
+        electric = false;
+
+        nextPoint = 0;
     }
 
     // Update is called once per frame
@@ -28,36 +30,5 @@ public class Serpent : Monster
 
     }
 
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            SepAnimateSleep();
-            sleep = false;
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            SepAnimateDead();
-        }
-    }
-
-    public void SepAnimateMove()
-    {
-
-    }
-
-    public void SepAnimateSleep()
-    {
-
-    }
-
-    public void SepAnimateDead()
-    {
-
-    }
 
 }

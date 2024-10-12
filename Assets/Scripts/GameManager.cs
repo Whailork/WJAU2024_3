@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,9 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
     public List<Monster> enemies; // Enemies
     private List<string> towers; // Towers
-    private int Hp;
-    private int money;
-    private string selectedTower;
+    public int Hp;
+    public int money;
+    public string selectedTower;
+    public Action onStartEditMode;
+    public Action onStopEditMode;
 
     private void Awake()
     {
@@ -26,6 +29,32 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void TowerIconClicked()
+    {
+        onStartEditMode?.Invoke();
+    }
+
+    public void OnStartEditMode()
+    {
+        
+    }
+
+    public void OnStopEditMode()
+    {
+        
+    }
+
+    private void OnEnable()
+    {
+        onStartEditMode += OnStartEditMode;
+        onStopEditMode += OnStopEditMode;
+    }
+
+    private void OnDisable()
+    {
+        onStartEditMode -= OnStartEditMode;
+        onStopEditMode -= OnStopEditMode;
+    }
 
     public void TourPlaced()
     {

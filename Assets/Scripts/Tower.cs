@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour, ITower
 {
     // References
-    //public Monster targetMonster;
+    public string targetMonster; // TODO : string => Monster
     public Projectile projectile;
     public GameManager gameManager;
 
@@ -16,7 +17,6 @@ public class Tower : MonoBehaviour, ITower
     public int donutTowerGrandRayon;
     public float distance;
 
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -30,11 +30,13 @@ public class Tower : MonoBehaviour, ITower
 
     void SpawnProjectile()
     {
+        Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
 
+        // TODO : Decommenter
+        //projectileInstance.goToTarget(targetMonster.transform.position);
     }
 
-    void Attack()
-    {
-        //projectile.moveto = targetMonster.position;
+    public void attack() {
+
     }
 }

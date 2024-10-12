@@ -66,46 +66,5 @@ public class Godzilla : Monster
     */
 
 
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        GodAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            GodAnimateSleep();
-            sleep = false;
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            GodAnimateDead();
-        }
-    }
-
-    public void GodAnimateMove()
-    {
-
-    }
-
-    public void GodAnimateSleep()
-    {
-
-    }
-
-    public void GodAnimateDead()
-    {
-
-    }
-
-
 
 }

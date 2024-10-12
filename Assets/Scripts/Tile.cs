@@ -14,8 +14,10 @@ public class Tile : MonoBehaviour
     
     public void OnMouseDown()
     {
+        
         if (GameManager.gameManager.selectedTower != "")
         {
+            Debug.Log("mouseDown");
             GameManager.gameManager.TourPlaced();
             isOccupied = true;
             switch (GameManager.gameManager.selectedTower)
@@ -67,6 +69,7 @@ public class Tile : MonoBehaviour
 
     public void OnStopEditMode()
     {
+        Debug.Log("color white");
         GetComponent<SpriteRenderer>().color = Color.white;
     }
     public void OnDisable()

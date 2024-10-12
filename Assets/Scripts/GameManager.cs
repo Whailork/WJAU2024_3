@@ -35,7 +35,9 @@ public class GameManager : MonoBehaviour
 
     public void TourPlaced()
     {
+        Debug.Log("tour placed");
         selectedTower = "";
+        onStopEditMode?.Invoke();
     }
 
     public void OnStartEditMode()

@@ -17,8 +17,7 @@ public class Projectile : MonoBehaviour
     public void goToTarget(Vector2 target)
     {
         float maxDistance = speed * Time.deltaTime;
-
-        // TODO : decommenter
-        //transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
+        
+        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
     }
 }

@@ -10,7 +10,6 @@ public class MapManager : MonoBehaviour
 
     // Variables
     public List<Vector2> pointsRepere;
-    public List<Vector2> pointsInverse;
 
     // Singleton
     private void Awake()
@@ -19,6 +18,9 @@ public class MapManager : MonoBehaviour
         {
             mapManager = this;
             DontDestroyOnLoad(this);
+
+            pointsRepere.Clear();
+            setList();
         }
         else
         {
@@ -28,8 +30,6 @@ public class MapManager : MonoBehaviour
 
     void Start()
     {
-        pointsRepere.Clear();
-        setList();
     }
 
     void Update()

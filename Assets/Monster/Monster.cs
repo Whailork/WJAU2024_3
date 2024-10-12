@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Monster : MonoBehaviour
+namespace Monster
 {
     // Variables
     public int life;
@@ -14,22 +10,21 @@ public class Monster : MonoBehaviour
     public bool dark;
     public Vector2 targetPosition;
 
-    // TODO : Ajuster vitesse
-    public float speed = 500.0f;
-    public Vector2 velocity;
+        // TODO : Ajuster vitesse
+        public float speed = 500.0f;
+        public Vector2 velocity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        GetComponent<Animator>().SetBool("Electric", electric);
+        // Start is called before the first frame update
+        void Start()
+        {
+            GetComponent<Animator>().SetBool("Electric", electric);
 
-        MapManager.mapManager.setList();
-    }
+            MapManager.mapManager.setList();
+        }
 
     protected void goToTarget(Vector2 target)
     {
-        float maxDistance = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, target, maxDistance);
+        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -48,24 +43,25 @@ public class Monster : MonoBehaviour
 
         if (distance <= 0.1)
         {
-            nextPoint++;
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
         }
 
-        return nextPoint;
-    }
+        public int updateTargetPoint(int nextPoint)
+        {
+            float distance = Vector2.Distance(transform.position, targetPosition);
 
 
 
     public int GetPower() { return power; }
 
-    public int GetLife() { return life; }
+        public int GetLife() { return life; }
 
     public int DamageLife(int attack)
     {
         life -= attack;
         return life;
     }
-    
-
 }

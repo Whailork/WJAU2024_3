@@ -122,6 +122,109 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &189737301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 189737303}
+  - component: {fileID: 189737302}
+  m_Layer: 0
+  m_Name: MapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &189737302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189737301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1697a39f318f62348891077d0056d691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsRepere: []
+  pointsInverse: []
+--- !u!4 &189737303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189737301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.777761, y: -1.0170454, z: 1045.4978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &234240834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1345.6882
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 172.4862
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989699888195859871, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017422043981593154, guid: 3e1ed6ffc0a9b394b89bb414c9c151c3, type: 3}
+      propertyPath: m_Name
+      value: Godzilla
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ed41f40edf48264ab5903c44c99241f, type: 3}
 --- !u!1 &289175787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1645,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6d847827e773044b5316e8b5979e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveWidget: {fileID: 1020055049}
+  waves:
+  - {fileID: 11400000, guid: 8385eea902b7bfd4f8d71e5e6be49310, type: 2}
+  - {fileID: 11400000, guid: 0ca602cae42dd14478d76627197b9345, type: 2}
+  - {fileID: 11400000, guid: 8130327bc71c0f849b8b3a1cebf7716e, type: 2}
+  - {fileID: 11400000, guid: 2ecac0769edd29d4bbb2344f47cc076e, type: 2}
+  currentWave: {fileID: 0}
+  godzillaReference: {fileID: 2277814334587386026, guid: beaf5adf7e692dc4997923f97f5aa7bc, type: 3}
+  serpentReference: {fileID: 8779206005630318834, guid: 660b1999c22c6a14f8017eb118cc6bf4, type: 3}
+  moustiqueReference: {fileID: 1505961068580817725, guid: 39b7a7cf754556149b95b99085c9c406, type: 3}
+  manteReference: {fileID: 16968233861871795, guid: da529ddffab26524fbade17257acbba9, type: 3}
 --- !u!4 &2049927436
 Transform:
   m_ObjectHideFlags: 0
@@ -1837,3 +1951,8 @@ SceneRoots:
   - {fileID: 1099161854}
   - {fileID: 1887541874}
   - {fileID: 2049927436}
+  - {fileID: 1883603600}
+  - {fileID: 601432230}
+  - {fileID: 1830309058}
+  - {fileID: 234240834}
+  - {fileID: 189737303}

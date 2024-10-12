@@ -1,34 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Serpent : Monster
+namespace Monster
 {
-    public int nextPoint;
-    // Start is called before the first frame update
-    void Start()
+    public class Serpent : Monster
     {
-        electric = false;
-
-        nextPoint = 0;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (targetPosition == Vector2.zero)
+        public int nextPoint;
+        // Start is called before the first frame update
+        void Start()
         {
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            electric = false;
+
+            nextPoint = 0;
         }
 
-        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            nextPoint = updateTargetPoint(nextPoint);
-            goToTarget(targetPosition);
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
 
+
     }
-
-
 }

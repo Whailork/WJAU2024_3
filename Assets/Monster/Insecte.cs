@@ -1,32 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Insecte : Monster
+namespace Monster
 {
-    public int nextPoint;
-    // Start is called before the first frame update
-    void Start()
-    { 
-        nextPoint = 0;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
+    public class Insecte : Monster
     {
-        if (targetPosition == Vector2.zero)
-        {
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        public int nextPoint;
+        // Start is called before the first frame update
+        void Start()
+        { 
+            nextPoint = 0;
         }
 
-        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            nextPoint = updateTargetPoint(nextPoint);
-            goToTarget(targetPosition);
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
+
 
     }
-
-
 }

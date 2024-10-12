@@ -1,11 +1,10 @@
-//using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Monster
 {
     public class Godzilla : Monster
     {
-
         //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
         // Variables
@@ -22,6 +21,7 @@ namespace Monster
 
         private void FixedUpdate()
         {
+
             if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];

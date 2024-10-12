@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4848515974160193593}
-  - component: {fileID: 16968233861871795}
   - component: {fileID: 5156884385625425437}
   - component: {fileID: 2480444285439222513}
   - component: {fileID: 5073452249105888654}
   - component: {fileID: 5898177198155947933}
+  - component: {fileID: 2460118685690065064}
   m_Layer: 0
   m_Name: Mante-Religieuse
   m_TagString: Untagged
@@ -36,27 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &16968233861871795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4127508937867001406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb8333b79c7a3654fa4aada4014b74eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 0
-  power: 0
-  sleep: 0
-  electric: 1
-  dark: 0
-  targetPosition: {x: 0, y: 0}
-  speed: 500
-  velocity: {x: 0, y: 0}
-  nextPoint: 0
 --- !u!95 &5156884385625425437
 Animator:
   serializedVersion: 5
@@ -189,6 +168,27 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2460118685690065064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127508937867001406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9d81699a3b7814281a1f925bb22c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  power: 0
+  sleep: 0
+  electric: 0
+  dark: 0
+  targetPosition: {x: 0, y: 0}
+  speed: 500
+  velocity: {x: 0, y: 0}
+  nextPoint: 0

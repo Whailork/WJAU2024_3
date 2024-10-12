@@ -31,7 +31,7 @@ namespace Monster
 
         void Update()
         {
-            IsDead();
+            //IsDead();
         }
 
         // Update is called once per frame

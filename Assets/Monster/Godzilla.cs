@@ -10,22 +10,23 @@ public class Godzilla : Monster
     // Start is called before the first frame update
     void Start()
     {
-        electric = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        GodAnimateMove();
-    //    }
-    //}
+    public override void IfdarkMode(bool dark)
+    {
+        if (dark == true)
+        {
+            sleep = true;
+        }
+    }
+
 
     public void IfSleep()
     {

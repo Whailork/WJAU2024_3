@@ -8,29 +8,27 @@ public class Monster : MonoBehaviour
     public int power;
     public bool sleep;
     public bool electric;
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        sleep = false;
         GetComponent<Animator>().SetBool("Electric", electric);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Speed", speed);
+        float move = GetComponent<Rigidbody2D>().velocity.magnitude;
+        GetComponent<Animator>().SetFloat("Move", move);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
     }
 
-    public void IfdarkMode(bool dark)
+    public virtual void IfdarkMode(bool dark)
     {
         if(dark == true)
         {
-            sleep = true;
+            sleep = false;
         }
     }
 

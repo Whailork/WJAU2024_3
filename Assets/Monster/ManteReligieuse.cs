@@ -10,7 +10,7 @@ public class ManteReligieuse : Monster
     // Start is called before the first frame update
     void Start()
     {
-        electric = true;
+
     }
 
     // Update is called once per frame
@@ -18,14 +18,6 @@ public class ManteReligieuse : Monster
     {
         
     }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        MRAnimateMove();
-    //    }
-    //}
 
     public void IfSleep()
     {

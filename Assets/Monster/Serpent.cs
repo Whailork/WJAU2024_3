@@ -8,7 +8,7 @@ public class Serpent : Monster
     // Start is called before the first frame update
     void Start()
     {
-        electric = false;
+ 
     }
 
     // Update is called once per frame
@@ -16,14 +16,6 @@ public class Serpent : Monster
     {
         
     }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        SepAnimateMove();
-    //    }
-    //}
 
     public void IfSleep()
     {

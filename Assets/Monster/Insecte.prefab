@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472329700380363862}
-  - component: {fileID: 1505961068580817725}
   - component: {fileID: 2036154550096546660}
   - component: {fileID: 6913871427780031374}
   - component: {fileID: 4116420723682811261}
   - component: {fileID: 4612402940131827160}
+  - component: {fileID: 2070670783662112122}
   m_Layer: 0
   m_Name: Insecte
   m_TagString: Untagged
@@ -36,26 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1505961068580817725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8861066936946240784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f69b66a394cba940a77c511b492af8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 0
-  power: 0
-  sleep: 0
-  electric: 0
-  targetPosition: {x: 0, y: 0}
-  speed: 500
-  velocity: {x: 0, y: 0}
-  nextPoint: 0
 --- !u!50 &2036154550096546660
 Rigidbody2D:
   serializedVersion: 4
@@ -188,6 +168,27 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2070670783662112122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861066936946240784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1be45b66f2178f4691cdcf9f53106de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  power: 0
+  sleep: 0
+  electric: 0
+  dark: 0
+  targetPosition: {x: 0, y: 0}
+  speed: 500
+  velocity: {x: 0, y: 0}
+  nextPoint: 0

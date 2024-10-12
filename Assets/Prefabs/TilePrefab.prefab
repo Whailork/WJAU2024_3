@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d50d08eb34e57949b168a872d3481b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7689a680bf3c0b48804ef6c0dc9755f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,11 +95,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4704846881082193158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5298f8224d2abd44a32636962c07cdc, type: 3}
+  m_Script: {fileID: 11500000, guid: dfef7d3083da37746b30997f6b00fd0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RayonPrefab: {fileID: 244017933331368729, guid: 4fd70983156a8614285329934d381d72, type: 3}
-  DonutPrefab: {fileID: 7977739714725722117, guid: 4404f2899037805458c76535ced39053, type: 3}
+  RayonPrefab: {fileID: 244017933331368729, guid: dcb08fb25545db84798b38db63706b94, type: 3}
+  DonutPrefab: {fileID: 7977739714725722117, guid: 6c585ca1f8359c4488d9cb31e93cc7eb, type: 3}
   pos: {x: 0, y: 0, z: 0}
 --- !u!61 &8431169715201324841
 BoxCollider2D:

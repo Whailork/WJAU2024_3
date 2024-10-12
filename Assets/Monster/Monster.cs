@@ -29,6 +29,11 @@ namespace Monster
             transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
         }
 
+        void Update()
+        {
+            //IsDead();
+        }
+
         // Update is called once per frame
         void FixedUpdate()
         {
@@ -37,6 +42,7 @@ namespace Monster
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
             GetComponent<Animator>().SetBool("Dark", dark);
+            IsDead();
         }
 
         public int updateTargetPoint(int nextPoint)
@@ -51,13 +57,13 @@ namespace Monster
    
             return nextPoint;
         }
- public void IsDead()
-    {
-        if (life <= 0)
+        public void IsDead()
         {
-            //Monster.Destroy();
+            if (life <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
-    }
 
         public int GetPower() { return power; }
 
@@ -65,12 +71,8 @@ namespace Monster
 
         public int DamageLife(int attack)
         {
-            
             life -= attack;
-            Debug.Log(life);
             return life;
-            
-        }
+         }
     }
-
 }

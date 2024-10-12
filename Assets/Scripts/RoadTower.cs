@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
 
 public class RoadTower : Tower
 {
@@ -10,7 +9,6 @@ public class RoadTower : Tower
     public int infligedDamaged;
     public int nextPoint;
     public Collider2D Collider2D;
-    public Rigidbody2D rb;
 
     public Vector2 targetPosition;
     
@@ -23,7 +21,7 @@ public class RoadTower : Tower
     {
         nextPoint = MapManager.mapManager.pointsRepere.Count - 1;
 
-        
+        Collider2D = GetComponent<Collider2D>();
         // Collider2D.enabled = true;
 
         /*
@@ -34,17 +32,6 @@ public class RoadTower : Tower
 
         Debug.Log("X : " + targetPosition.x + "" + targetPosition.y);
         */
-    }
-
-    void Awake()
-    {
-        Collider2D = GetComponent<Collider2D>();
-        rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Dynamic;
-
-        Collider2D.enabled = true;
-
-        rb.isKinematic = false;
     }
 
     private void FixedUpdate()
@@ -62,22 +49,7 @@ public class RoadTower : Tower
             nextPoint = updateTargetPoint(nextPoint);
             goToTarget(targetPosition);
         }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision with Monster");
-
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // TODO : voir comment envoyer le message d'apply damage
-            collision.gameObject.SendMessage("ApplyDamage", 10);
-
-            Debug.Log("Collision with Monster");
-
-            // TODO : redefinir la descente des pdv
-            pointDeVie -= 10;
-        }
+        
     }
 
     // Update is called once per frame
@@ -87,7 +59,7 @@ public class RoadTower : Tower
 
     protected void goToTarget(Vector2 target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, (Time.deltaTime* 10.00f));
+        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
     public int updateTargetPoint(int nextPoint)
@@ -106,8 +78,21 @@ public class RoadTower : Tower
 
     void Attack()
     {
-    }
 
-    
-    
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision with Monster");
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // TODO : voir comment envoyer le message d'apply damage
+            collision.gameObject.SendMessage("ApplyDamage", 10);
+
+            Debug.Log("Collision with Monster");
+
+            // TODO : redefinir la descente des pdv
+            pointDeVie -= 10;
+        }
+    }
 }

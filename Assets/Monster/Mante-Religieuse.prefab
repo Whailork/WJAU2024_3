@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4127508937867001406}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.51, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,13 +45,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4127508937867001406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d9d81699a3b7814281a1f925bb22c0e, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8333b79c7a3654fa4aada4014b74eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 200
-  power: 20
+  life: 0
+  power: 0
   sleep: 0
   electric: 1
+  dark: 0
   targetPosition: {x: 0, y: 0}
   speed: 500
   velocity: {x: 0, y: 0}
@@ -188,6 +189,6 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

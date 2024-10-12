@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class Tower : MonoBehaviour, ITower
 {
     // References
-    public Monster targetMonster;
+    public Monster.Monster targetMonster;
     public Projectile projectile;
     public GameObject upgradeMenu;
     

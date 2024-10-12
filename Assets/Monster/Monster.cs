@@ -1,16 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Monster : MonoBehaviour
+namespace Monster
 {
     // Variables
     public int life;
     public int power;
     public bool sleep;
     public bool electric;
+    public bool dark;
     public Collider2D Collider2D;
     public Vector2 targetPosition;
 
@@ -23,8 +20,8 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetBool("Electric", electric);
         Collider2D = GetComponent<Collider2D>();
 
-        MapManager.mapManager.setList();
-    }
+            MapManager.mapManager.setList();
+        }
 
     protected void goToTarget(Vector2 target)
     {
@@ -38,6 +35,7 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetFloat("Speed", speed);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
+        GetComponent<Animator>().SetBool("Dark", dark);
     }
 
     public int updateTargetPoint(int nextPoint)
@@ -46,24 +44,21 @@ public class Monster : MonoBehaviour
 
         if (distance <= 0.1)
         {
-            nextPoint++;
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
         }
 
-        return nextPoint;
-    }
-
-    public virtual void IfdarkMode(bool dark)
-    {
-        if(dark == true)
+        public int updateTargetPoint(int nextPoint)
         {
-            sleep = false;
-        }
-    }
+            float distance = Vector2.Distance(transform.position, targetPosition);
+
+
 
     public int GetPower() { return power; }
 
-    public int GetLife() { return life; }
+        public int GetLife() { return life; }
 
     public int DamageLife(int attack)
     {

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Monster;
 //using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
@@ -15,6 +17,11 @@ public class WaveManager : MonoBehaviour
     private int serpentSpawned;
     private int moustiqueSpawned;
     private int manteSpawned;
+
+    public Godzilla godzillaReference;
+    public Serpent serpentReference;
+    public Insecte moustiqueReference;
+    public ManteReligieuse manteReference;
     private void Awake()
     {
         if (waveManager == null)
@@ -138,26 +145,35 @@ public class WaveManager : MonoBehaviour
 
     public void spawnMonster(int monster)
     {
+        Monster.Monster newMonster;
         switch (monster)
         {
             case 0:
                 godzillaSpawned++;
-                Debug.Log("gozilla");
+                newMonster = Instantiate(godzillaReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
+                GameManager.gameManager.enemies.Add(newMonster);
                 break;
             case 1:
                 serpentSpawned++;
+                newMonster = Instantiate(serpentReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
+                GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("serpent");
                 break;
             case 2:
                 moustiqueSpawned++;
+                newMonster = Instantiate(moustiqueReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
+                GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("moustique");
                 break;
             case 3:
                 manteSpawned++;
+                newMonster = Instantiate(manteReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
+                GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("mante religieuse");
                 break;
             
         }
+        
     }
 
     private IEnumerator spawnCountdown(float time)

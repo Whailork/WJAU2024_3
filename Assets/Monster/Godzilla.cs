@@ -1,100 +1,79 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Godzilla : Monster
+namespace Monster
 {
-
-    //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
-
-    // Variables
-    public int nextPoint;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Godzilla : Monster
     {
-        electric = false;
 
-        nextPoint = 0;
-    }
+        //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
-    private void FixedUpdate()
-    {
-        if(targetPosition == Vector2.zero)
+        // Variables
+        public int nextPoint;
+        public Collider2D Collider2D;
+        public Rigidbody2D rb;
+
+        void Awake()
         {
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            Collider2D = GetComponent<Collider2D>();
+            rb = GetComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+
+            Collider2D.enabled = true;
+
+            rb.isKinematic = false;
         }
 
-        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        // Start is called before the first frame update
+        void Start()
         {
-            nextPoint = updateTargetPoint(nextPoint);
-            goToTarget(targetPosition);
+
+            electric = false;
+
+            nextPoint = 0;
+        }
+
+        private void FixedUpdate()
+        {
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
+        }
+
+        void Update()
+        {
+
+        }
+
+
+        public void IfdarkMode(bool dark)
+        {
+            if (dark == true)
+            {
+                if (dark == true)
+                {
+                    sleep = true;
+                }
+            }
+        }
+
+        public void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("Collision with Monster");
+
+            if (collision.gameObject.CompareTag("Tank"))
+            {
+
+                Debug.Log("Collision with Tank");
+            }
         }
     }
-
-    void Update()
-    {
-
-    }
-
-    // Enlever car faisant faire des jumps durant le déplacement
-    /*
-    public Vector2 Seek(Vector2 target)
-    {
-        Vector2 desiredVelocity = target - (Vector2)transform.position;
-        desiredVelocity.Normalize();
-        desiredVelocity *= speed;
-
-        Vector2 steering = desiredVelocity - velocity;
-        steering = Vector2.ClampMagnitude(steering, speed);
-
-        return steering;
-    }
-    */
-
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        GodAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            GodAnimateSleep();
-            sleep = false;
-        }
-    }
-
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            GodAnimateDead();
-        }
-    }
-
-    public void GodAnimateMove()
-    {
-
-    }
-
-    public void GodAnimateSleep()
-    {
-
-    }
-
-    public void GodAnimateDead()
-    {
-
-    }
-
-
-
 }

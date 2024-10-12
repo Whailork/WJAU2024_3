@@ -1,60 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Serpent : Monster
+namespace Monster
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public class Serpent : Monster
     {
-        electric = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        SepAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
+        public int nextPoint;
+        // Start is called before the first frame update
+        void Start()
         {
-            SepAnimateSleep();
-            sleep = false;
-        }
-    }
+            electric = false;
 
-    public void IfLifeZero()
-    {
-        if (life == 0)
+            nextPoint = 0;
+        }
+
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            SepAnimateDead();
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
-    }
 
-    public void SepAnimateMove()
-    {
 
     }
-
-    public void SepAnimateSleep()
-    {
-
-    }
-
-    public void SepAnimateDead()
-    {
-
-    }
-
 }

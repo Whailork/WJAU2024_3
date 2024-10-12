@@ -8,10 +8,11 @@ public class RayonTower : Tower
 {
     // Variables
     public int rayonTowerRayon;
-
+    protected Animator animator;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        StartCoroutine(fireCountDown());
     }
 
     void Update()
@@ -25,7 +26,7 @@ public class RayonTower : Tower
 
     void Attack()
     {
-        foreach (Monster enemy in GameManager.gameManager.enemies)
+        foreach (Monster.Monster enemy in GameManager.gameManager.enemies)
         {
             distance = Vector2.Distance(this.transform.position, enemy.transform.position);
 
@@ -44,8 +45,38 @@ public class RayonTower : Tower
 
         if (distance > rayonTowerRayon)
         {
+            targetMonster = null;
             return true;
         }
         return false;
+    }
+
+    private IEnumerator fireCountDown()
+    {
+        while (true)
+        {
+            
+            if (targetMonster != null)
+            {
+                fire();
+                
+            }
+            yield return new WaitForSeconds(fireRate);
+           
+            
+        }
+    }
+
+    public void fire()
+    {
+        if (targetMonster.DamageLife(power) <= 0)
+        {
+            animator.SetTrigger("shoot");
+        }
+    }
+
+    public void OnDestroy()
+    {
+        StopCoroutine(fireCountDown());
     }
 }

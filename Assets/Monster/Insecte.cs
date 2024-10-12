@@ -1,73 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Insecte : Monster
+namespace Monster
 {
-
-    // Start is called before the first frame update
-    void Start()
+    public class Insecte : Monster
     {
-        electric = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-    //public void IfMove()
-    //{
-    //    if (position.x != 0 || position.y != 0)
-    //    {
-    //        IseAnimateMove();
-    //    }
-    //}
-
-    public void IfSleep()
-    {
-        if (sleep == true)
-        {
-            IseAnimateSleep();
-            sleep = false;
+        public int nextPoint;
+        // Start is called before the first frame update
+        void Start()
+        { 
+            nextPoint = 0;
         }
-    }
 
-    public void IfElectric()
-    {
-        if (electric == true)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            IseAnimateElec();
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
+
         }
-    }
 
-    public void IfLifeZero()
-    {
-        if (life == 0)
-        {
-            IseAnimateDead();
-        }
-    }
-
-    public void IseAnimateMove()
-    {
 
     }
-
-    public void IseAnimateSleep()
-    {
-
-    }
-
-    public void IseAnimateElec()
-    {
-
-    }
-
-    public void IseAnimateDead()
-    {
-
-    }
-
 }

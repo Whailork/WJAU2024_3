@@ -11,7 +11,7 @@ public class Monster : MonoBehaviour
     public int power;
     public bool sleep;
     public bool electric;
-    
+    public bool dark;
     public Vector2 targetPosition;
 
     // TODO : Ajuster vitesse
@@ -39,6 +39,7 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetFloat("Speed", speed);
         GetComponent<Animator>().SetBool("Sleep", sleep);
         GetComponent<Animator>().SetInteger("Life", life);
+        GetComponent<Animator>().SetBool("Dark", dark);
     }
 
     public int updateTargetPoint(int nextPoint)
@@ -54,13 +55,7 @@ public class Monster : MonoBehaviour
         return nextPoint;
     }
 
-    public virtual void IfdarkMode(bool dark)
-    {
-        if(dark == true)
-        {
-            sleep = false;
-        }
-    }
+
 
     public int GetPower() { return power; }
 

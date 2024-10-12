@@ -13,7 +13,7 @@ namespace Monster
         public Vector2 targetPosition;
 
         // TODO : Ajuster vitesse
-        public float speed = 500.0f;
+        //public float speed = 10.0f;
         public Vector2 velocity;
 
         // Start is called before the first frame update

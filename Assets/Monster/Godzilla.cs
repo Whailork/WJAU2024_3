@@ -33,6 +33,12 @@ namespace Monster
                 goToTarget(targetPosition);
             }
 
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
+            GetComponent<Animator>().SetBool("Dark", dark);
+
         }
 
         void Update()

@@ -10,6 +10,12 @@ namespace Monster
         // Variables
         public int nextPoint;
 
+        /*
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("CollisionEnter_godzilla");
+        }*/
+
         // Start is called before the first frame update
         void Start()
         {

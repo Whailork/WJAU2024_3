@@ -8,13 +8,7 @@ public class RoadTower : Tower
     public int pointDeVie;
     public int infligedDamaged;
     public int nextPoint;
-    public Collider2D Collider2D;
-
     public Vector2 targetPosition;
-    
-
-    // TODO : Ajuster vitesse
-    public float speed = 500.0f;
 
 
     void Start()
@@ -34,6 +28,19 @@ public class RoadTower : Tower
         */
     }
 
+    /*
+    void Awake()
+    {
+        Collider2D = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        Collider2D.enabled = true;
+
+        rb.isKinematic = false;
+    }
+    */
+
     private void FixedUpdate()
     {
 
@@ -50,11 +57,6 @@ public class RoadTower : Tower
             goToTarget(targetPosition);
         }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     protected void goToTarget(Vector2 target)

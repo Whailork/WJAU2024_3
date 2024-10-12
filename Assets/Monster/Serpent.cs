@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Serpent : Monster
 {
-
+    public int nextPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,9 +13,19 @@ public class Serpent : Monster
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (targetPosition == Vector2.zero)
+        {
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        }
+
+        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        {
+            nextPoint = updateTargetPoint(nextPoint);
+            goToTarget(targetPosition);
+        }
+
     }
 
     public void IfSleep()

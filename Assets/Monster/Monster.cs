@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,16 +11,12 @@ public class Monster : MonoBehaviour
     public int power;
     public bool sleep;
     public bool electric;
-<<<<<<< HEAD
-=======
-
     
     public Vector2 targetPosition;
 
     // TODO : Ajuster vitesse
     public float speed = 500.0f;
     public Vector2 velocity;
->>>>>>> origin/main
 
     // Start is called before the first frame update
     void Start()
@@ -46,9 +41,6 @@ public class Monster : MonoBehaviour
         GetComponent<Animator>().SetInteger("Life", life);
     }
 
-<<<<<<< HEAD
-    public virtual void IfdarkMode(bool dark)
-=======
     public int updateTargetPoint(int nextPoint)
     {
         float distance = Vector2.Distance(transform.position, targetPosition);
@@ -62,8 +54,7 @@ public class Monster : MonoBehaviour
         return nextPoint;
     }
 
-    public void IfdarkMode(bool dark)
->>>>>>> origin/main
+    public virtual void IfdarkMode(bool dark)
     {
         if(dark == true)
         {

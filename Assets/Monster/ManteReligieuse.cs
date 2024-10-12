@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ManteReligieuse : Monster
 {
-
+    public int nextPoint;
     //public ManteReligieuse() { life = 150; power = 50; sleep = false; electric = true; }
 
     // Start is called before the first frame update
@@ -14,9 +15,19 @@ public class ManteReligieuse : Monster
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (targetPosition == Vector2.zero)
+        {
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        }
+
+        if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+        {
+            nextPoint = updateTargetPoint(nextPoint);
+            goToTarget(targetPosition);
+        }
+
     }
 
     public void IfSleep()

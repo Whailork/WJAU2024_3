@@ -18,7 +18,7 @@ public class DonutTower : Tower
 
     void Attack()
     {
-        foreach (gameManager.getMonsters() monster in Monster)
+        /*foreach (gameManager.getMonsters() monster in Monster)
         {
             distance = Vector2.Distance(this.position, monster.position);
 
@@ -27,6 +27,6 @@ public class DonutTower : Tower
 
                 break;
             }
-        }
+        }*/
     }
 }

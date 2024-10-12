@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    private List<string> enemies; // Enemies
+    public List<string> enemies; // Enemies
     private List<string> towers; // Towers
     private int Hp;
     private int money;

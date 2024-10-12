@@ -15,9 +15,7 @@ public class Godzilla : Monster
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
 
-=======
         electric = false;
 
         nextPoint = 0;
@@ -35,13 +33,13 @@ public class Godzilla : Monster
             nextPoint = updateTargetPoint(nextPoint);
             goToTarget(targetPosition);
         }
->>>>>>> origin/main
+
     }
 
     void Update()
     {
 
-<<<<<<< HEAD
+
     }
 
     public override void IfdarkMode(bool dark)
@@ -50,9 +48,6 @@ public class Godzilla : Monster
         {
             sleep = true;
         }
-    }
-
-=======
     }
 
     // Enlever car faisant faire des jumps durant le déplacement
@@ -78,7 +73,6 @@ public class Godzilla : Monster
     //        GodAnimateMove();
     //    }
     //}
->>>>>>> origin/main
 
     public void IfSleep()
     {

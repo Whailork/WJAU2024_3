@@ -52,6 +52,10 @@ MonoBehaviour:
   power: 20
   sleep: 0
   electric: 1
+  targetPosition: {x: 0, y: 0}
+  speed: 500
+  velocity: {x: 0, y: 0}
+  nextPoint: 0
 --- !u!95 &5156884385625425437
 Animator:
   serializedVersion: 5
@@ -176,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a8e43e8ea1b7a904cab2a0d3b4feec1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

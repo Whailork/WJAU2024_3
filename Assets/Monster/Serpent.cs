@@ -5,8 +5,6 @@ using UnityEngine;
 public class Serpent : Monster
 {
 
-    public Serpent() { life = 100; power = 50; sleep = false; electric = false; }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +17,13 @@ public class Serpent : Monster
         
     }
 
-    public void IfMove()
-    {
-        if (position.x != 0 || position.y != 0)
-        {
-            SepAnimateMove();
-        }
-    }
+    //public void IfMove()
+    //{
+    //    if (position.x != 0 || position.y != 0)
+    //    {
+    //        SepAnimateMove();
+    //    }
+    //}
 
     public void IfSleep()
     {

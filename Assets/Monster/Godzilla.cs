@@ -5,7 +5,7 @@ using UnityEngine;
 public class Godzilla : Monster
 {
 
-    public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
+    //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
     // Start is called before the first frame update
     void Start()
@@ -19,19 +19,19 @@ public class Godzilla : Monster
         
     }
 
-    public void IfMove()
-    {
-        if (position.x != 0 || position.y != 0)
-        {
-            GodAnimateMove();
-        }
-    }
+    //public void IfMove()
+    //{
+    //    if (position.x != 0 || position.y != 0)
+    //    {
+    //        GodAnimateMove();
+    //    }
+    //}
 
     public void IfSleep()
     {
         if (sleep == true)
         {
-            //GodAnimateSleep();
+            GodAnimateSleep();
             sleep = false;
         }
     }
@@ -40,7 +40,7 @@ public class Godzilla : Monster
     {
         if (life == 0)
         {
-            //GodAnimateDead();
+            GodAnimateDead();
         }
     }
 

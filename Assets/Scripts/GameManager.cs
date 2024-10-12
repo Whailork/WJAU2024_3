@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public List<Monster> enemies; // Enemies
+    public List<Monster.Monster> enemies; // Enemies
     private List<string> towers; // Towers
     public int Hp;
     public int money;

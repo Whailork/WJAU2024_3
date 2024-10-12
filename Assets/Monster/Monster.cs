@@ -1,69 +1,67 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class Monster : MonoBehaviour
+namespace Monster
 {
-    // Variables
-    public int life;
-    public int power;
-    public bool sleep;
-    public bool electric;
-    
-    public Vector2 targetPosition;
-
-    // TODO : Ajuster vitesse
-    public float speed = 500.0f;
-    public Vector2 velocity;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Monster : MonoBehaviour
     {
-        GetComponent<Animator>().SetBool("Electric", electric);
+        // Variables
+        public int life;
+        public int power;
+        public bool sleep;
+        public bool electric;
+    
+        public Vector2 targetPosition;
 
-        MapManager.mapManager.setList();
-    }
+        // TODO : Ajuster vitesse
+        public float speed = 500.0f;
+        public Vector2 velocity;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            GetComponent<Animator>().SetBool("Electric", electric);
+
+            MapManager.mapManager.setList();
+        }
 
     protected void goToTarget(Vector2 target)
     {
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        GetComponent<Animator>().SetFloat("Speed", speed);
-        GetComponent<Animator>().SetBool("Sleep", sleep);
-        GetComponent<Animator>().SetInteger("Life", life);
-    }
-
-    public int updateTargetPoint(int nextPoint)
-    {
-        float distance = Vector2.Distance(transform.position, targetPosition);
-
-        if (distance <= 0.1)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            nextPoint++;
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
         }
 
-        return nextPoint;
-    }
-
-    public virtual void IfdarkMode(bool dark)
-    {
-        if(dark == true)
+        public int updateTargetPoint(int nextPoint)
         {
-            sleep = false;
+            float distance = Vector2.Distance(transform.position, targetPosition);
+
+            if (distance <= 0.1)
+            {
+                nextPoint++;
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
+
+            return nextPoint;
         }
-    }
 
-    public int GetPower() { return power; }
+        public virtual void IfdarkMode(bool dark)
+        {
+            if(dark == true)
+            {
+                sleep = false;
+            }
+        }
 
-    public int GetLife() { return life; }
+        public int GetPower() { return power; }
+
+        public int GetLife() { return life; }
 
     public int DamageLife(int attack)
     {

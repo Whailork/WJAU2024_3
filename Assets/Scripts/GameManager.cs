@@ -1,19 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    public List<string> enemies; // Enemies
+    public List<Monster> enemies; // Enemies
     private List<string> towers; // Towers
     public int Hp;
     public int money;
     public string selectedTower;
     public Action onStartEditMode;
     public Action onStopEditMode;
-    
+
     private void Awake()
     {
         if (gameManager == null)
@@ -33,13 +34,6 @@ public class GameManager : MonoBehaviour
         onStartEditMode?.Invoke();
     }
 
-    public void TourPlaced()
-    {
-        Debug.Log("tour placed");
-        selectedTower = "";
-        onStopEditMode?.Invoke();
-    }
-
     public void OnStartEditMode()
     {
         
@@ -50,17 +44,23 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         onStartEditMode += OnStartEditMode;
         onStopEditMode += OnStopEditMode;
-
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         onStartEditMode -= OnStartEditMode;
         onStopEditMode -= OnStopEditMode;
+    }
+
+    public void TourPlaced()
+    {
+        Debug.Log("tour placed");
+        selectedTower = "";
+        onStopEditMode?.Invoke();
     }
 
     // Start is called before the first frame update

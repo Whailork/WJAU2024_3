@@ -6,15 +6,11 @@ using static UnityEngine.GraphicsBuffer;
 public class Tower : MonoBehaviour, ITower
 {
     // References
-    public string targetMonster; // TODO : string => Monster
+    public Monster targetMonster;
     public Projectile projectile;
-    public GameManager gameManager;
-
+    public GameObject upgradeMenu;
+    
     // Variables
-    public string towerType;
-    public int rayonTowerRayon;
-    public int donutTowerPetitRayon;
-    public int donutTowerGrandRayon;
     public float distance;
 
     void Start()
@@ -28,15 +24,18 @@ public class Tower : MonoBehaviour, ITower
 
     }
 
-    void SpawnProjectile()
+    public void OnMouseDown()
     {
-        Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
-
-        // TODO : Decommenter
-        //projectileInstance.goToTarget(targetMonster.transform.position);
+        
+            
     }
-
     public void attack() {
 
+    }
+
+    public void SpawnProjectile()
+    {
+        Projectile projectileInstance = Instantiate(projectile, transform.position, Quaternion.identity);
+        projectileInstance.goToTarget(targetMonster.transform.position);
     }
 }

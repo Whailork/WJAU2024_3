@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 877095675}
   - component: {fileID: 877095674}
   - component: {fileID: 877095673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Godzilla (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,8 +179,9 @@ MonoBehaviour:
   power: 0
   sleep: 0
   electric: 0
+  dark: 0
   targetPosition: {x: 0, y: 0}
-  speed: 10
+  speed: 500
   velocity: {x: 0, y: 0}
   nextPoint: 0
 --- !u!50 &877095675
@@ -291,9 +292,9 @@ GameObject:
   - component: {fileID: 1147379698}
   - component: {fileID: 1147379699}
   - component: {fileID: 1147379700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,8 +318,8 @@ MonoBehaviour:
   pointDeVie: 0
   infligedDamaged: 0
   nextPoint: 0
-  targetPosition: {x: 0, y: 0}
   Collider2D: {fileID: 0}
+  targetPosition: {x: 0, y: 0}
   speed: 500
 --- !u!212 &1147379696
 SpriteRenderer:
@@ -381,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 1147379694}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.54, y: -3.57, z: 0}
+  m_LocalPosition: {x: 10, y: -3.57, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -447,7 +448,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -494,9 +495,9 @@ GameObject:
   - component: {fileID: 1190835223}
   - component: {fileID: 1190835224}
   - component: {fileID: 1190835225}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Godzilla
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -611,8 +612,9 @@ MonoBehaviour:
   power: 0
   sleep: 0
   electric: 0
+  dark: 0
   targetPosition: {x: 0, y: 0}
-  speed: 10
+  speed: 500
   velocity: {x: 0, y: 0}
   nextPoint: 0
 --- !u!95 &1190835224
@@ -648,7 +650,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

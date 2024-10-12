@@ -46,7 +46,7 @@ namespace Monster
             if (distance <= 0.1)
             {
                 nextPoint++;
-                targetPosition = MapManager.mapManager.transform.position;
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
    
             return nextPoint;

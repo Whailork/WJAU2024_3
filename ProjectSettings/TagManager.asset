@@ -47,3 +47,9 @@ TagManager:
   - name: Tank
     uniqueID: 1528720183
     locked: 0
+  - name: tileLayer
+    uniqueID: 2915048465
+    locked: 0
+  - name: towerlayer
+    uniqueID: 3034226307
+    locked: 0

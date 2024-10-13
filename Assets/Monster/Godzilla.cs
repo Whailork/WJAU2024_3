@@ -10,15 +10,10 @@ namespace Monster
         // Variables
         public int nextPoint;
 
-        /*
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log("CollisionEnter_godzilla");
-        }*/
-
         // Start is called before the first frame update
         void Start()
         {
+            AnimateS
 
             electric = false;
 
@@ -34,16 +29,11 @@ namespace Monster
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
 
-            //if (targetPosition == Vector2.zero)
-            //{
-            //    targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
-            //}
-
-            //if (nextPoint < MapManager.mapManager.pointsRepere.Count)
-            //{
-            //    nextPoint = updateTargetPoint(nextPoint);
-            //    goToTarget(targetPosition);
-            //}
+            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+            {
+                nextPoint = updateTargetPoint(nextPoint);
+                goToTarget(targetPosition);
+            }
 
         }
 

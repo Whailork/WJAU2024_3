@@ -33,7 +33,7 @@ public class Tile : MonoBehaviour
                     tower = Instantiate(DonutPrefab,pos,Quaternion.identity); 
                     break;
                 case "Rayon":
-                    Debug.Log("rayon");
+                    Debug.Log("Rayon");
                     tower = Instantiate(RayonPrefab,pos,Quaternion.identity); 
                     break;
                 case "Road":

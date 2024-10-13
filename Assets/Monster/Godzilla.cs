@@ -1,25 +1,19 @@
-//using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace Monster
 {
     public class Godzilla : Monster
     {
-
         //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
         // Variables
         public int nextPoint;
 
-        /*
-        void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log("CollisionEnter_godzilla");
-        }*/
-
         // Start is called before the first frame update
         void Start()
         {
+            AnimateS
 
             electric = false;
 
@@ -28,6 +22,8 @@ namespace Monster
 
         private void FixedUpdate()
         {
+            GetComponent<Rigidbody2D>().velocity = move;
+            Debug.Log("Monstre qui start");
             if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
@@ -43,7 +39,7 @@ namespace Monster
 
         void Update()
         {
-
+          
         }
 
 

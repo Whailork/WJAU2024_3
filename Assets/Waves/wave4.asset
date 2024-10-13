@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894412b2b5c7b8c448212cc4ba9c9f9f, type: 3}
   m_Name: wave4
   m_EditorClassIdentifier: 
-  manteNb: 1
+  manteNb: 0
   godzillaNb: 3
   serpentNb: 3
   moustiqueNb: 1
-  timeBetweenSpawns: 2
+  timeBetweenSpawns: 1

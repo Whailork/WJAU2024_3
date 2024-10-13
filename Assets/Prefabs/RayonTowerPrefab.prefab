@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &244017933331368729
@@ -95,16 +95,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2537362641914543407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a45911a814f954298f0efcf0971a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ab50cab5fa2ca64b897a173fe3c9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetMonster: {fileID: 0}
-  projectile: {fileID: 3483295118796941699, guid: 085239eda0443f946b2c59206cb50dd9, type: 3}
+  projectile: {fileID: 0}
   upgradeMenu: {fileID: 0}
   distance: 0
-  fireRate: 2
-  power: 25
-  rayonTowerRayon: 2
+  rayonTowerRayon: 0
 --- !u!95 &3092778122781306613
 Animator:
   serializedVersion: 5

@@ -11,10 +11,8 @@ namespace Monster
         public bool electric;
         public bool dark;
         public Vector2 targetPosition;
-        public Rigidbody rb;
 
         // TODO : Ajuster vitesse
-        public Vector2 move = new Vector2(10f, 0f);
         public Vector2 velocity;
 
         void OnCollisionEnter2D(Collision2D collision)
@@ -24,9 +22,7 @@ namespace Monster
 
         // Start is called before the first frame update
         void Start()
-        {
-            GetComponent<Animator>().SetBool("Electric", electric);
-
+        { 
             MapManager.mapManager.setList();
         }
 

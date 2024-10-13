@@ -10,11 +10,20 @@ public class RayonTower : Tower
     public int rayonTowerRayon;
 
     protected Animator animator;
+    private static readonly int Open = Animator.StringToHash("open");
+
     void Start()
     {
-       
+        range = rayonTowerRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+    }
+    
+    public void OnMouseDown()
+    {
+        GameObject menu = GameObject.Find("UpgradeMenu");
+        menu.GetComponent<UpgrdaeMenuScript>().openMenu(this);
+       
     }
 
     void Update()

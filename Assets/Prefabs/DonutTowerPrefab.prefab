@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 491368502922713189}
   - component: {fileID: 7977739714725722117}
   - component: {fileID: -5501851710938289373}
+  - component: {fileID: -5884054247858000244}
   m_Layer: 6
   m_Name: DonutTowerPrefab
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1260740989
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a42fa81642b0f9348b1f729627c941f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,7 +102,7 @@ MonoBehaviour:
   amountToRemove: 0
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
-  upgradeMenu: {fileID: 0}
+  upgradeMenu: {fileID: 3140818936130471022, guid: eda7abff7ea2eb8438c3f8cc3b87d343, type: 3}
   distance: 0
   fireRate: 0.5
   power: 50
@@ -128,3 +129,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &-5884054247858000244
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238883494924062229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.55, y: 3.21}
+    newSize: {x: 5.55, y: 3.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.55, y: 3.21}
+  m_EdgeRadius: 0

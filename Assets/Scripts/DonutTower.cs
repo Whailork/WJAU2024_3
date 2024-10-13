@@ -14,6 +14,7 @@ public class DonutTower : Tower
     // Start is called before the first frame update
     void Start()
     {
+        range = grandRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
     }
@@ -53,6 +54,13 @@ public class DonutTower : Tower
         }
         return false;
     }
+    public void OnMouseDown()
+    {
+        GameObject menu = GameObject.Find("UpgradeMenu");
+        menu.GetComponent<UpgrdaeMenuScript>().openMenu(this);
+       
+    }
+
     
     private IEnumerator fireCountDown()
     {

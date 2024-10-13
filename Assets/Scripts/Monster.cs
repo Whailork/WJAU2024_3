@@ -77,6 +77,7 @@ namespace Monster
         {
             if (life <= 0)
             {
+                GameManager.gameManager.enemies.Remove(this);
                 Destroy(gameObject);
                 GameManager.gameManager.AddMoney(amountToAdd);
                 

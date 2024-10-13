@@ -13,6 +13,7 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         {
+            AnimateS
 
             electric = false;
 

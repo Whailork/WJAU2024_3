@@ -18,6 +18,11 @@ namespace Monster
         public Vector2 move =new Vector2(10f, 0f);
         public Vector2 velocity;
 
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("CollisionEnter_monster");
+        }
+
         // Start is called before the first frame update
         void Start()
         {

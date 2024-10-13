@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class TestingMenuButtons : MonoBehaviour
@@ -9,6 +8,7 @@ public class TestingMenuButtons : MonoBehaviour
     
     public void Play()
     {
+        SceneManager.LoadScene("SampleScene");
         SoundPlayer.instance.SetMusic(nextSong,1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }

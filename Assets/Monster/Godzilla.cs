@@ -27,6 +27,12 @@ namespace Monster
 
         private void FixedUpdate()
         {
+            GetComponent<Rigidbody2D>().velocity = move;
+            Debug.Log("Monstre qui start");
+            if (targetPosition == Vector2.zero)
+            {
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+            }
 
             //if (targetPosition == Vector2.zero)
             //{
@@ -43,7 +49,7 @@ namespace Monster
 
         void Update()
         {
-
+          
         }
 
 

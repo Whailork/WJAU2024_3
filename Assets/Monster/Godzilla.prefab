@@ -189,6 +189,7 @@ MonoBehaviour:
   electric: 0
   dark: 0
   targetPosition: {x: 0, y: 0}
-  speed: 500
+  rb: {fileID: 0}
+  move: {x: 10, y: 0}
   velocity: {x: 0, y: 0}
   nextPoint: 0

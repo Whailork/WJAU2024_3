@@ -18,4 +18,5 @@ public class TestingMenuButtons : MonoBehaviour
         Application.Quit();
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
+    
 }

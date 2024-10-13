@@ -15,14 +15,19 @@ public class MaisonBlanche : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        etat = 5;
-        spriteArrayDay[0] = Resources.Load<Sprite>("d_damage1");
-        spriteArrayDay[1] = Resources.Load<Sprite>("d_damage2");
-        spriteArrayDay[2] = Resources.Load<Sprite>("d_damage3");
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        spriteArrayNight[0] = Resources.Load<Sprite>("n_damage1");
-        spriteArrayNight[1] = Resources.Load<Sprite>("n_damage2");
-        spriteArrayNight[2] = Resources.Load<Sprite>("n_damage3");
+        etat = 5;
+        spriteArrayDay[0] = Resources.Load<Sprite>("d_damage1.png");
+        spriteArrayDay[1] = Resources.Load<Sprite>("d_damage2.png");
+        spriteArrayDay[2] = Resources.Load<Sprite>("d_damage3.png");
+
+        spriteArrayNight[0] = Resources.Load<Sprite>("n_damage1.png");
+        spriteArrayNight[1] = Resources.Load<Sprite>("n_damage2.png");
+        spriteArrayNight[2] = Resources.Load<Sprite>("n_damage3.png");
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
 
     // TODO : vérifier si elle change
@@ -56,6 +61,18 @@ public class MaisonBlanche : MonoBehaviour
         {
             spriteRenderer.sprite = spriteArrayNight[x];
         }
+    }
+
+    public void OnDayModeActivated()
+    {
+        isDay = true;
+        ChangeSprite(etat);
+    }
+
+    public void OnNightModeActivated()
+    {
+        isDay = false;
+        ChangeSprite(etat);
     }
 
     public void takeDamage(int damages)

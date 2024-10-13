@@ -15,8 +15,10 @@ public class RoadTower : Tower
 
     void Start()
     {
-        
         nextPoint = (MapManager.mapManager.pointsRepere.Count) - 1;
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
 
     private void FixedUpdate()
@@ -67,6 +69,13 @@ public class RoadTower : Tower
     {
     }
 
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
 
-
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
+    }
 }

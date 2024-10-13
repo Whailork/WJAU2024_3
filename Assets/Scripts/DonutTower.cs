@@ -28,12 +28,14 @@ public class DonutTower : Tower
 
     public void OnDayModeActivated()
     {
-        GetComponent<Animator>().SetBool("Night", false);
+        GetComponent<Animator>().SetBool("Nigh", false);
+        Debug.Log("Night = " + GetComponent<Animator>().GetBool("Night"));
     }
 
     public void OnNightModeActivated()
     {
         GetComponent<Animator>().SetBool("Night", true);
+        Debug.Log("Night = " + GetComponent<Animator>().GetBool("Night"));
     }
 
     // Update is called once per frame

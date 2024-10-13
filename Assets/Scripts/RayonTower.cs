@@ -12,9 +12,11 @@ public class RayonTower : Tower
     protected Animator animator;
     void Start()
     {
-       
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
 
     void Update()
@@ -80,5 +82,15 @@ public class RayonTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+    }
+
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
+
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
     }
 }

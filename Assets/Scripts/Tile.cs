@@ -13,9 +13,13 @@ public class Tile : MonoBehaviour
     public RayonTower BunkerPrefab;
     private Tower tower;
     public Vector3 pos;
-    
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite nightSprite;
+    public Sprite daySprite;
+
     // Start is called before the first frame update
-    
+
     public void OnMouseDown()
     {
         if (isOccupied)
@@ -91,15 +95,31 @@ public class Tile : MonoBehaviour
     }
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         pos = GetComponent<Transform>().position;
         GameManager.gameManager.onStartEditMode += OnStartEditMode;
         GameManager.gameManager.onStopEditMode += OnStopEditMode;
 
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
+
+        nightSprite = Resources.Load<Sprite>("n_x.png");
+        daySprite = Resources.Load<Sprite>("d_x.png");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnDayModeActivated()
+    {
+        spriteRenderer.sprite = daySprite;
+    }
+
+    public void OnNightModeActivated()
+    {
+        spriteRenderer.sprite = nightSprite;
     }
 }

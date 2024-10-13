@@ -12,7 +12,7 @@ namespace Monster
 
             animator = GetComponent<Animator>();
             animator.Play("Idle Serpent");
-            //electric = false;
+            electric = false;
 
             nextPoint = 0;
         }

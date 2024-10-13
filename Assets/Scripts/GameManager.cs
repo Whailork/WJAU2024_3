@@ -26,21 +26,21 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
-        moneyWidget.GetComponent<TextMeshPro>().text = money + "";
+        moneyWidget.GetComponent<TextMeshProUGUI>().text = money + "";
         Debug.Log("Money increased: " + money);
     }
     
     public void RemoveMoney(int amount)
     {
         money -= amount;
-        moneyWidget.GetComponent<TextMeshPro>().text = money + "";
+        moneyWidget.GetComponent<TextMeshProUGUI>().text = money + "";
         Debug.Log("Money decreased: " + money);
     }
 
     public void takeDamage(int amountDamage)
     {
         Hp -= amountDamage;
-        hpWidget.GetComponent<TextMeshPro>().text = Hp + "";
+        hpWidget.GetComponent<TextMeshProUGUI>().text = Hp + "";
         //TODO : faire que quand tu est à 0 ça finit la partie
     }
 

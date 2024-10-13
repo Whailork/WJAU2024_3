@@ -40,7 +40,7 @@ public class MaisonBlanche : MonoBehaviour
         GameManager.gameManager.onStopEditMode += OnStopEditMode;
     }
 
-    // TODO : vérifier si elle change
+    // TODO : vï¿½rifier si elle change
     void Update()
     {
         if (GameManager.gameManager.Hp == 0 && etat != 2)
@@ -120,8 +120,11 @@ public class MaisonBlanche : MonoBehaviour
     }
     public void OnMouseDown()
     {
-
-       Instantiate(tankPrefab, new Vector3(pos.x, Convert.ToSingle(pos.y + 0.7), pos.z), Quaternion.identity);
+        if (GameManager.gameManager.money >= tankPrefab.amountToRemove)
+        {
+            Instantiate(tankPrefab, new Vector3(pos.x, Convert.ToSingle(pos.y + 0.7), pos.z), Quaternion.identity);
+        }
+       
     }
 
 

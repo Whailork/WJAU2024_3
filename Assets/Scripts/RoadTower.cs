@@ -19,6 +19,7 @@ public class RoadTower : Tower
         
         nextPoint = (MapManager.mapManager.pointsRepere.Count) - 1;
 
+        GameManager.gameManager.RemoveMoney(amountToRemove);
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }

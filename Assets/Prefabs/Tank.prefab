@@ -144,13 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b39089a58471f4cb575a749855fda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToRemove: 0
+  amountToRemove: 15
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
-  upgradeMenu: {fileID: 3140818936130471022, guid: eda7abff7ea2eb8438c3f8cc3b87d343, type: 3}
+  upgradeMenu: {fileID: 0}
   distance: 0
   fireRate: 0
   power: 0
+  range: 0
   pointDeVie: 0
   infligedDamaged: 0
   nextPoint: 0

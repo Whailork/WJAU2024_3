@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2414521557002855798}
-  - component: {fileID: 8779206005630318834}
   - component: {fileID: 4536801624691401143}
   - component: {fileID: 2427573393596055631}
   - component: {fileID: 3366281358541102007}
   - component: {fileID: 4943857325137030488}
+  - component: {fileID: 4873776591223339607}
   m_Layer: 0
   m_Name: Serpent
   m_TagString: Untagged
@@ -36,26 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8779206005630318834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903644131340762117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d951bad17b59bc47bd1cc46376586b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 0
-  power: 0
-  sleep: 0
-  electric: 0
-  targetPosition: {x: 0, y: 0}
-  speed: 500
-  velocity: {x: 0, y: 0}
-  nextPoint: 0
 --- !u!95 &4536801624691401143
 Animator:
   serializedVersion: 5
@@ -188,6 +168,27 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4873776591223339607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903644131340762117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691081747f3c2cf45ba0cde2525f5c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  power: 0
+  sleep: 0
+  electric: 0
+  dark: 0
+  targetPosition: {x: 0, y: 0}
+  speed: 500
+  velocity: {x: 0, y: 0}
+  nextPoint: 0

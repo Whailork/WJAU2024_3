@@ -14,7 +14,6 @@ namespace Monster
         void Start()
         {
             electric = false;
-
             GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
             GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }
@@ -26,11 +25,10 @@ namespace Monster
             IsDead();
             float speed = 1f;
             Debug.Log(speed);
+            GetComponent<Animator>().SetBool("Sleep", false);
             GetComponent<Animator>().SetFloat("Speed", speed);
-            GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
-            GetComponent<Animator>().SetBool("Dark", dark);
-            GetComponent<Animator>().SetBool("Electric", electric);
+            GetComponent<Animator>().SetBool("Electric", false);
 
 
             if (targetPosition == Vector2.zero)
@@ -83,12 +81,12 @@ namespace Monster
         // TODO : Gozilla n'a pas de dark/night mode
         public void OnDayModeActivated()
         {
-            GetComponent<Animator>().SetBool("", false);
+            GetComponent<Animator>().SetBool("Sleep", false);
         }
 
         public void OnNightModeActivated()
         {
-            GetComponent<Animator>().SetBool("", true);
+            GetComponent<Animator>().SetBool("Sleep", true);
         }
     }
 }

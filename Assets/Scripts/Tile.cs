@@ -113,6 +113,12 @@ public class Tile : MonoBehaviour
         
     }
 
+    public void OnDestroy()
+    {
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+    }
+
     public void OnDayModeActivated()
     {
         spriteRenderer.sprite = daySprite;

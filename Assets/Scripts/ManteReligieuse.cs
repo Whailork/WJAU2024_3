@@ -39,5 +39,11 @@ namespace Monster
         {
             GetComponent<Animator>().SetBool("Dark", true);
         }
+
+        public void OnDestroy()
+        {
+            GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        }
     }
 }

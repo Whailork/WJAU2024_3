@@ -15,9 +15,11 @@ public class MaisonBlanche : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteArrayNight = new Sprite[3];
+        spriteArrayDay = new Sprite[3];
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        etat = 5;
         spriteArrayDay[0] = Resources.Load<Sprite>("d_damage1.png");
         spriteArrayDay[1] = Resources.Load<Sprite>("d_damage2.png");
         spriteArrayDay[2] = Resources.Load<Sprite>("d_damage3.png");
@@ -61,6 +63,12 @@ public class MaisonBlanche : MonoBehaviour
         {
             spriteRenderer.sprite = spriteArrayNight[x];
         }
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
     }
 
     public void OnDayModeActivated()

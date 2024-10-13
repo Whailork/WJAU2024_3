@@ -10,22 +10,28 @@ public class TestingMenuButtons : MonoBehaviour
     public Button but2;
     public Button but3;
 
+    public GameObject background;
+
     public void LevelOne()
     {
         MapManager.mapManager.currentLevel = 1;
-        SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene("TowerDefenseScene");
+
+        MapManager.mapManager.pathImageBackground = "d_gp.png";
     }
 
     public void LevelTwo()
     {
         MapManager.mapManager.currentLevel = 2;
-        SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene("TowerDefenseScene");
+        MapManager.mapManager.pathImageBackground = "d_gm2.png";
     }
 
     public void LevelThree()
     {
         MapManager.mapManager.currentLevel = 3;
-        SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene("TowerDefenseScene");
+        MapManager.mapManager.pathImageBackground = "d_gm3.png";
     }
 
     public void Play()

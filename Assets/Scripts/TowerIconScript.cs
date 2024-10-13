@@ -11,7 +11,7 @@ public class TowerIconScript : MonoBehaviour
     public void OnMouseDown()
     {
         GameManager.gameManager.selectedTower = towerType;
-        //Debug.Log(towerType);
+
         if (towerType == "Tank")
         {
             //FONCTION QUI MET EN PLACE DU MAISON BLANCHE 

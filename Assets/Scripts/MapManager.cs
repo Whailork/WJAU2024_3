@@ -15,6 +15,7 @@ public class MapManager : MonoBehaviour
     public int currentLevel;
     public PathsDatas currentMap;
 
+    public string pathImageBackground;
 
     // Singleton
     private void Awake()
@@ -71,7 +72,7 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("currentLevel non setter!!!");
+            Debug.LogError("maps non setter!!!");
         }
     }
 

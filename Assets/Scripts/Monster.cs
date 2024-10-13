@@ -79,6 +79,7 @@ namespace Monster
             {
                 Debug.Log("Mort du monstre");
                 GameManager.gameManager.enemies.Remove(this);
+                GameManager.gameManager.AddMoney(amountToAdd);
                 StartCoroutine(Wait());
                 Destroy(gameObject);
                 

@@ -12,9 +12,9 @@ public class TowerIconScript : MonoBehaviour
     {
         GameManager.gameManager.selectedTower = towerType;
         //Debug.Log(towerType);
-        if (towerType == "tank")
+        if (towerType == "Tank")
         {
-
+            //FONCTION QUI MET EN PLACE DU MAISON BLANCHE 
         }
         else
         {

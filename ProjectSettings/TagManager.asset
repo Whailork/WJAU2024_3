@@ -6,13 +6,15 @@ TagManager:
   tags:
   - Enemy
   - Tank
+  - WhiteHouse
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
+  - Enemy
   - Tank
   - 
   - 
@@ -37,9 +39,23 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - WhiteHouse
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ennemis
+    uniqueID: 3550255703
+    locked: 0
+  - name: Tank
+    uniqueID: 1528720183
+    locked: 0
+  - name: tileLayer
+    uniqueID: 2915048465
+    locked: 0
+  - name: towerlayer
+    uniqueID: 3034226307
+    locked: 0
+  - name: WhiteHouse
+    uniqueID: 1087322363
     locked: 0

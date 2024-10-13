@@ -10,6 +10,10 @@ public class MapManager : MonoBehaviour
 
     // Variables
     public List<Vector2> pointsRepere;
+    public List<PathsDatas> maps;
+
+    public int currentLevel;
+    public PathsDatas currentMap;
 
     // Singleton
     private void Awake()
@@ -36,22 +40,37 @@ public class MapManager : MonoBehaviour
     {
 
     }
+    /*
+    public void addMap(PathsDatas data)
+    {
+        maps.Add(data);
+    }
 
+    public void setCurrentMap(int index)
+    {
+        currentLevel = index;
+        currentMap = maps[currentLevel];
+    }
+    */
+
+    // TODO : Verifier la logique
     public void setList()
     {
-        // TODO : if pathName = XXX, set those points
-        Vector2[] tabXXX = {
-            new Vector2(-7.25f, 3.25f),
-            new Vector2(7.25f, 3.25f),
-            new Vector2(7.25f, 0.25f),
-            new Vector2(-7.75f, 0.25f),
-            new Vector2(-7.75f, -2.75f),
-            new Vector2(7.25f, -2.75f)
-        };
-
-        for (int x = 0; x < tabXXX.Length; x++)
+        if(maps.Count != 0)
         {
-            pointsRepere.Add(tabXXX[x]);
+            // currentLevel est donnée lors du choix du niveau
+            currentLevel = 1; // TODO : à retirer
+            currentMap = maps[currentLevel - 1];
+            
+
+            for (int x = 0; x < currentMap.tabDePoints.Length; x++)
+            {
+                pointsRepere.Add(currentMap.tabDePoints[x]);
+            }
+        }
+        else
+        {
+            Debug.LogError("currentLevel non setter!!!");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Monster
 
             IfSleep();
             IsDead();
-            //float speed = 500f; //GetComponent<Rigidbody2D>().velocity.magnitude;
+            float speed = 500f; //GetComponent<Rigidbody2D>().velocity.magnitude;
             Debug.Log(speed);
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);

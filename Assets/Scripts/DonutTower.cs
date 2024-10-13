@@ -100,5 +100,7 @@ public class DonutTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
     }
 }

@@ -45,6 +45,12 @@ namespace Monster
 
         }
 
+        public void OnDestroy()
+        {
+            GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        }
+
         // TODO : Gozilla n'a pas de dark/night mode
         public void OnDayModeActivated()
         {

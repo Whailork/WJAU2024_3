@@ -82,6 +82,9 @@ public class RayonTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+
     }
 
     public void OnDayModeActivated()

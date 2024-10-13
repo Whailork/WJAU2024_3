@@ -15,6 +15,8 @@ public class RoadTower : Tower
 
     void Start()
     {
+       
+        
         nextPoint = (MapManager.mapManager.pointsRepere.Count) - 1;
 
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;

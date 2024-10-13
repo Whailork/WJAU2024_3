@@ -12,6 +12,8 @@ public class Tower : MonoBehaviour, ITower
     
     // Variables
     public float distance;
+    public float fireRate;
+    public int power;
 
     void Start()
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -38,13 +39,33 @@ public class UpgrdaeMenuScript : MonoBehaviour
         
         Debug.Log(selectedTower.power);
         powerText.GetComponent<TextMeshProUGUI>().text = selectedTower.power + "";
-        speedText.GetComponent<TextMeshProUGUI>().text = selectedTower.fireRate.ToString();
+        speedText.GetComponent<TextMeshProUGUI>().text = Convert.ToString(selectedTower.fireRate);
 
-        rangeText.GetComponent<TextMeshProUGUI>().text = selectedTower.range.ToString();
+        rangeText.GetComponent<TextMeshProUGUI>().text = Convert.ToString(selectedTower.range);
     }
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void upgradePower()
+    {
+        selectedTower.power += 5;
+        setValues();
+    }
+
+    public void upgradeSpeed()
+    {
+        selectedTower.fireRate = selectedTower.fireRate / 2;
+        setValues();
+
+    }
+
+    public void upgradeRange()
+    {
+        selectedTower.range += 1;
+        setValues();
+
     }
 }

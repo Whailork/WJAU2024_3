@@ -26,6 +26,8 @@ public class DonutTower : Tower
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
+    
+    
 
     public void OnDayModeActivated()
     {
@@ -42,6 +44,7 @@ public class DonutTower : Tower
     // Update is called once per frame
     void Update()
     {
+        range = grandRayon;
         // Check if lorsque ennemie est detruit targetMonster = null?
         if (targetMonster == null || targetOutOfRange())
         {

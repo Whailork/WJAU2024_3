@@ -2781,16 +2781,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveWidget: {fileID: 0}
-  waves:
-  - {fileID: 11400000, guid: de4be5f5fe0282a4c953752ac57755b5, type: 2}
-  - {fileID: 11400000, guid: 5abbbfe6bc3ac484ca977d46f4dad497, type: 2}
-  - {fileID: 11400000, guid: e853fe66508a0364c8d113919bec6a35, type: 2}
-  - {fileID: 11400000, guid: 5fbb6312b9985b345a4a64b381087b9e, type: 2}
-  currentWave: {fileID: 0}
+  waves: []
+  currentWave: {fileID: 11400000, guid: de4be5f5fe0282a4c953752ac57755b5, type: 2}
   godzillaReference: {fileID: 3110235288877945288, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
   serpentReference: {fileID: 4873776591223339607, guid: f913df29709c0a14ea30c277426840fa, type: 3}
   moustiqueReference: {fileID: 2070670783662112122, guid: 64da5eb2201cfbf48832d985ccb77d7f, type: 3}
   manteReference: {fileID: 2460118685690065064, guid: 715551556d5a9aa469ace3b8493f1a6d, type: 3}
+  GodSound: {fileID: 8300000, guid: a57b6b3cda0f975438a6fa9c0c33a98c, type: 3}
+  InsectSound: {fileID: 8300000, guid: e8da9a419d1b0a34891f8b83bf48b597, type: 3}
+  SerpSound: {fileID: 8300000, guid: 3638489064c0b814bbd509a80fba549e, type: 3}
+  ManteSound: {fileID: 8300000, guid: e8da9a419d1b0a34891f8b83bf48b597, type: 3}
 --- !u!4 &2049927436
 Transform:
   m_ObjectHideFlags: 0

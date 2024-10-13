@@ -1552,8 +1552,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.43091, y: -0.0028801}
+  m_SizeDelta: {x: 149.09, y: 132.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891900433
 MonoBehaviour:
@@ -1744,6 +1744,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226656894}
   m_CullTransparentMesh: 1
+--- !u!1 &1418521210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418521212}
+  - component: {fileID: 1418521211}
+  m_Layer: 0
+  m_Name: mapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418521211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418521210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545ad31a583cadb44928056ddc1668a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsRepere: []
+  maps: []
+  currentLevel: 0
+  currentMap: {fileID: 0}
+--- !u!4 &1418521212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418521210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9640992, y: 0.485142, z: 0.63265765}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1492215175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,3 +1974,4 @@ SceneRoots:
   - {fileID: 229813456}
   - {fileID: 45856443}
   - {fileID: 667326124}
+  - {fileID: 1418521212}

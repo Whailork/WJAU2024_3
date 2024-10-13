@@ -8,6 +8,7 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         { 
+
         }
 
         // Update is called once per frame
@@ -23,6 +24,8 @@ namespace Monster
                 nextPoint = updateTargetPoint(nextPoint);
                 goToTarget(targetPosition);
             }
+
+            IsDead();
 
         }
 

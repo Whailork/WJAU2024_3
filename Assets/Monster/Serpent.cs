@@ -5,14 +5,10 @@ namespace Monster
     public class Serpent : Monster
     {
         public int nextPoint;
-        public Animator animator;
         // Start is called before the first frame update
         void Start()
         {
-
-            animator = GetComponent<Animator>();
-            animator.Play("Idle Serpent");
-            //electric = false;
+            electric = false;
         }
 
         // Update is called once per frame
@@ -28,6 +24,8 @@ namespace Monster
                 nextPoint = updateTargetPoint(nextPoint);
                 goToTarget(targetPosition);
             }
+
+            IsDead();
 
         }
 

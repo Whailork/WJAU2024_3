@@ -27,6 +27,8 @@ namespace Monster
                 goToTarget(targetPosition);
             }
 
+            IsDead();
+
         }
 
 

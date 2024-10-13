@@ -9,11 +9,13 @@ namespace Monster
 
         // Variables
         public int nextPoint;
+        private Animator animator;
 
         // Start is called before the first frame update
         void Start()
         {
-            AnimateS
+            animator = GetComponent<Animator>();
+            animator.Play("Idle_Godzilla");
 
             electric = false;
 
@@ -23,35 +25,36 @@ namespace Monster
         private void FixedUpdate()
         {
             GetComponent<Rigidbody2D>().velocity = move;
+
             Debug.Log("Monstre qui start");
             if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             }
 
-            if (nextPoint < MapManager.mapManager.pointsRepere.Count)
-            {
+           if (nextPoint < MapManager.mapManager.pointsRepere.Count)
+           {
                 nextPoint = updateTargetPoint(nextPoint);
                 goToTarget(targetPosition);
-            }
+           }
 
-        }
+       }
 
-        void Update()
-        {
+    //    void Update()
+    //    {
           
-        }
+    //    }
 
 
-        public void IfdarkMode(bool dark)
-        {
-            if (dark == true)
-            {
-                if (dark == true)
-                {
-                    sleep = true;
-                }
-            }
-        }
+    //    public void IfdarkMode(bool dark)
+    //    {
+    //        if (dark == true)
+    //        {
+    //            if (dark == true)
+    //            {
+    //                sleep = true;
+    //            }
+    //        }
+    //    }
     }
 }

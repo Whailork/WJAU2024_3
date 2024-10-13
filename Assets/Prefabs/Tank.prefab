@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c983d23804a604409710f070e291fbf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f36d4f2f232196445b459ba00dbecb77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.25, y: 2.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,8 +123,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 4.8}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 4.25, y: 2.29}
+    newSize: {x: 4.25, y: 2.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -141,15 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067512520854700482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 945d032222e53a346b79c2d6cfc67989, type: 3}
+  m_Script: {fileID: 11500000, guid: 18b39089a58471f4cb575a749855fda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
   upgradeMenu: {fileID: 0}
   distance: 0
-  fireRate: 0
-  power: 0
   pointDeVie: 0
   infligedDamaged: 0
   nextPoint: 0

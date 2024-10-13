@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4873776591223339607}
   m_Layer: 3
   m_Name: Serpent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,8 +199,6 @@ MonoBehaviour:
   electric: 0
   dark: 0
   targetPosition: {x: 0, y: 0}
-  rb: {fileID: 0}
-  move: {x: 10, y: 0}
   velocity: {x: 0, y: 0}
   nextPoint: 0
   animator: {fileID: 0}

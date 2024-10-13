@@ -11,10 +11,8 @@ namespace Monster
         public bool electric;
         public bool dark;
         public Vector2 targetPosition;
-        public Rigidbody rb;
 
         // TODO : Ajuster vitesse
-        public Vector2 move = new Vector2(10f, 0f);
         public Vector2 velocity;
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -24,9 +22,7 @@ namespace Monster
 
         // Start is called before the first frame update
         void Start()
-        {
-            GetComponent<Animator>().SetBool("Electric", electric);
-
+        { 
             MapManager.mapManager.setList();
         }
 
@@ -44,6 +40,7 @@ namespace Monster
             GetComponent<Animator>().SetInteger("Life", life);
             GetComponent<Animator>().SetBool("Dark", dark);
             GetComponent<Animator>().SetBool("Electric", electric);
+            IsDead();
         }
 
         public int updateTargetPoint(int nextPoint)
@@ -62,7 +59,7 @@ namespace Monster
         {
             if (life <= 0)
             {
-                //Monster.Destroy();
+                Destroy(gameObject);
             }
         }
 

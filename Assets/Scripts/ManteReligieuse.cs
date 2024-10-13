@@ -10,6 +10,7 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         {
+            maxlife = life; 
             GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
             GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }

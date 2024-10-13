@@ -99,15 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79592fad6a5772f4cbd89619224885bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToRemove: 0
+  amountToRemove: 5
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
-  upgradeMenu: {fileID: 3140818936130471022, guid: eda7abff7ea2eb8438c3f8cc3b87d343, type: 3}
+  upgradeMenu: {fileID: 0}
   distance: 0
   fireRate: 0.5
   power: 50
+  range: 0
   petitRayon: 2
   grandRayon: 5
+  spriteRenderer: {fileID: 0}
+  nightSprite: {fileID: 0}
 --- !u!95 &-5501851710938289373
 Animator:
   serializedVersion: 5

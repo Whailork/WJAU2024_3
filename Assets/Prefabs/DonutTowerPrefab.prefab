@@ -75,15 +75,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b89f805ba5ad4af4195eb5644184c2d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a42fa81642b0f9348b1f729627c941f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.55, y: 3.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7977739714725722117
@@ -102,8 +102,10 @@ MonoBehaviour:
   projectile: {fileID: 0}
   upgradeMenu: {fileID: 0}
   distance: 0
-  petitRayon: 0
-  grandRayon: 0
+  fireRate: 0.5
+  power: 50
+  petitRayon: 2
+  grandRayon: 5
 --- !u!95 &-5501851710938289373
 Animator:
   serializedVersion: 5
@@ -114,7 +116,7 @@ Animator:
   m_GameObject: {fileID: 2238883494924062229}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c911c09898ab384fadb9b305ced3d7e, type: 2}
+  m_Controller: {fileID: 9100000, guid: c55cb767c8950c84cbafd5cd0839c31b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

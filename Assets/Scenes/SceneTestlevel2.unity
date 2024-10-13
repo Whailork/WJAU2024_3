@@ -232,6 +232,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1507807410320087826, guid: 715551556d5a9aa469ace3b8493f1a6d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507807410320087826, guid: 715551556d5a9aa469ace3b8493f1a6d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3462669061289273965, guid: 715551556d5a9aa469ace3b8493f1a6d, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -337,6 +345,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618256540594261898, guid: 64da5eb2201cfbf48832d985ccb77d7f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618256540594261898, guid: 64da5eb2201cfbf48832d985ccb77d7f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8861066936946240784, guid: 64da5eb2201cfbf48832d985ccb77d7f, type: 3}
       propertyPath: m_Name
       value: Insecte
@@ -372,11 +388,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.75
+      value: -3.53
       objectReference: {fileID: 0}
     - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -455,13 +471,29 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3126391606058708732, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3126391606058708732, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027954793282079223, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027954793282079223, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6340029324317986930, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.49
+      value: -14.54
       objectReference: {fileID: 0}
     - target: {fileID: 6340029324317986930, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.36
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 6340029324317986930, guid: ebf4693f0e9b8424493f853f2fd6d7b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -554,6 +586,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2414521557002855798, guid: f913df29709c0a14ea30c277426840fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412896742864150918, guid: f913df29709c0a14ea30c277426840fa, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412896742864150918, guid: f913df29709c0a14ea30c277426840fa, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -766,7 +806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9ceadff8a8aa4945b994d983b23e868, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7339e8db809b29345826460076566f92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8323128054849713799}
   - component: {fileID: 8113163457420982303}
   - component: {fileID: 2465901157347749191}
+  - component: {fileID: -3770782772036462350}
   m_Layer: 31
   m_Name: MaisonBlanche_Prefab
   m_TagString: WhiteHouse
@@ -98,7 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b855117e739cf4286be89629efd6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  spriteArrayDay: []
+  spriteArrayNight: []
   pointDeVie: 0
+  etat: 0
+  isDay: 0
+  tankPrefab: {fileID: 2153611195199184767, guid: 9559f5105ce1a9f499556cd105813482, type: 3}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!61 &2465901157347749191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +152,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
+--- !u!95 &-3770782772036462350
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081072088178019469}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef5757891c0e36e46a132fbd396def97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

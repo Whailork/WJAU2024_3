@@ -17,6 +17,9 @@ public class RayonTower : Tower
         range = rayonTowerRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
     
     public void OnMouseDown()
@@ -89,5 +92,18 @@ public class RayonTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+
+    }
+
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
+
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
     }
 }

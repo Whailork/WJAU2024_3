@@ -7,7 +7,10 @@ namespace Monster
         public int nextPoint;
         // Start is called before the first frame update
         void Start()
-        { 
+        {
+            maxlife = life; 
+            GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }
 
         // Update is called once per frame
@@ -26,6 +29,20 @@ namespace Monster
 
         }
 
+        public void OnDestroy()
+        {
+            GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        }
 
+        public void OnDayModeActivated()
+        {
+            GetComponent<Animator>().SetBool("Dark", false);
+        }
+
+        public void OnNightModeActivated()
+        {
+            GetComponent<Animator>().SetBool("Dark", true);
+        }
     }
 }

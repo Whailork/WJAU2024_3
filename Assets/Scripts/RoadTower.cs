@@ -55,6 +55,11 @@ public class RoadTower : Tower
         return nextPoint;
     }
 
+    public void takeDamage(int damages)
+    {
+        pointDeVie -= damages;
+    }
+
     void Attack()
     {
     }

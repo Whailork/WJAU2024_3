@@ -33,7 +33,7 @@ namespace Monster
             {
                 Debug.Log("WhiteHouse collision");
 
-                collision.gameObject.GetComponent<MaisonBlanche>().takeDamage(power);
+                GameManager.gameManager.takeDamage(power);
             }
         }
 

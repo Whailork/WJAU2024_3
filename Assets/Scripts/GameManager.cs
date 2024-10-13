@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 // using Unity.VisualScripting;
 using UnityEngine.UIElements;
@@ -16,17 +17,28 @@ public class GameManager : MonoBehaviour
     private bool editMode;
     public Action onStartEditMode;
     public Action onStopEditMode;
+    public GameObject moneyWidget;
+    public GameObject hpWidget;
     
     public void AddMoney(int amount)
     {
         money += amount;
+        moneyWidget.GetComponent<TextMeshPro>().text = money + "";
         Debug.Log("Money increased: " + money);
     }
     
     public void RemoveMoney(int amount)
     {
         money -= amount;
+        moneyWidget.GetComponent<TextMeshPro>().text = money + "";
         Debug.Log("Money decreased: " + money);
+    }
+
+    public void takeDamage(int amount)
+    {
+        Hp -= amount;
+        hpWidget.GetComponent<TextMeshPro>().text = Hp + "";
+        //TODO : faire que quand tu est à 0 ça finit la partie
     }
 
     private void Awake()
@@ -78,6 +90,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hpWidget.GetComponent<TextMeshProUGUI>().text = Hp + "";
+        moneyWidget.GetComponent<TextMeshProUGUI>().text = money + "";
         
     }
 

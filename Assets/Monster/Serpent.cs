@@ -14,6 +14,13 @@ namespace Monster
         // Update is called once per frame
         void FixedUpdate()
         {
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetFloat("Speed", speed);
+            GetComponent<Animator>().SetBool("Sleep", sleep);
+            GetComponent<Animator>().SetInteger("Life", life);
+            GetComponent<Animator>().SetBool("Dark", dark);
+            GetComponent<Animator>().SetBool("Electric", electric);
+
             if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];

@@ -12,4 +12,11 @@ public class TestingMenuButtons : MonoBehaviour
         SoundPlayer.instance.SetMusic(nextSong,1F);
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+        SoundPlayer.instance.PlaySFX(btnSound,2);
+    }
+    
 }

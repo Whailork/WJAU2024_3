@@ -5,26 +5,18 @@ namespace Monster
 {
     public class Godzilla : Monster
     {
-        //public Godzilla() { life = 100; power = 20; sleep = false; electric = false; }
 
         // Variables
         public int nextPoint;
-        private Animator animator;
 
         // Start is called before the first frame update
         void Start()
         {
-            animator = GetComponent<Animator>();
-            animator.Play("Idle_Godzilla");
-
             electric = false;
-
-            nextPoint = 0;
         }
 
         private void FixedUpdate()
         {
-
             //Debug.Log("Monstre qui start");
             if (targetPosition == Vector2.zero)
             {
@@ -37,23 +29,16 @@ namespace Monster
                 goToTarget(targetPosition);
            }
 
-       }
+            if (dark == true)
+            {
+                if (dark == true)
+                {
+                    sleep = true;
+                }
+            }
 
-    //    void Update()
-    //    {
-          
-    //    }
+            IsDead();
 
-
-    //    public void IfdarkMode(bool dark)
-    //    {
-    //        if (dark == true)
-    //        {
-    //            if (dark == true)
-    //            {
-    //                sleep = true;
-    //            }
-    //        }
-    //    }
+        }
     }
 }

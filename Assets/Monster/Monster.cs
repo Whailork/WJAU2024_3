@@ -1,4 +1,5 @@
 using UnityEngine;
+using 
 
 namespace Monster
 {
@@ -19,9 +20,18 @@ namespace Monster
         {
             Debug.Log("TriggerEnter_monster");
 
-            if (collision.gameObject.CompareTag("Enemy"))
+            if (collision.gameObject.CompareTag("Tank"))
             {
-                //collision.gameObject.SendMessage("ApplyDamage", 10);
+                Debug.Log("Tank collision");
+
+                life -= collision.gameObject.GetComponent<RoadTower>().power;
+                collision.gameObject.GetComponent<RoadTower>().takeDamage(power);
+            }
+            else if (collision.gameObject.CompareTag("WhiteHouse"))
+            {
+                Debug.Log("WhiteHouse collision");
+
+                collision.gameObject.GetComponent<MaisonBlanche>().takeDamage(power);
             }
         }
 

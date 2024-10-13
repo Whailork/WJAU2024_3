@@ -13,16 +13,19 @@ public class TestingMenuButtons : MonoBehaviour
     public void LevelOne()
     {
         MapManager.mapManager.currentLevel = 1;
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void LevelTwo()
     {
         MapManager.mapManager.currentLevel = 2;
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void LevelThree()
     {
         MapManager.mapManager.currentLevel = 3;
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void Play()

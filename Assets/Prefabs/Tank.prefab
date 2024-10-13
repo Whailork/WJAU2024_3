@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1260740989
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f36d4f2f232196445b459ba00dbecb77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -147,7 +147,7 @@ MonoBehaviour:
   amountToRemove: 0
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
-  upgradeMenu: {fileID: 0}
+  upgradeMenu: {fileID: 3140818936130471022, guid: eda7abff7ea2eb8438c3f8cc3b87d343, type: 3}
   distance: 0
   fireRate: 0
   power: 0

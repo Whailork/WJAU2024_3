@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class MaisonBlanche : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class MaisonBlanche : MonoBehaviour
     public int pointDeVie;
     public int etat;
     public bool isDay;
+    public RoadTower tankPrefab;
+    public Vector3 pos;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +32,12 @@ public class MaisonBlanche : MonoBehaviour
         spriteArrayNight[1] = Resources.Load<Sprite>("n_damage2.png");
         spriteArrayNight[2] = Resources.Load<Sprite>("n_damage3.png");
 
+        pos = GetComponent<Transform>().position;
+
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
+        GameManager.gameManager.onStartEditMode+= OnStartEditMode;
+        GameManager.gameManager.onStopEditMode += OnStopEditMode;
     }
 
     // TODO : vérifier si elle change
@@ -52,6 +60,23 @@ public class MaisonBlanche : MonoBehaviour
         }
 
     }
+    public void OnStartEditMode()
+    {
+        if(GameManager.gameManager.selectedTower == "Road")
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
+           
+
+
+    }
+
+    public void OnStopEditMode()
+    {
+        Debug.Log("color white");
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 
     void ChangeSprite(int x)
     {
@@ -69,6 +94,8 @@ public class MaisonBlanche : MonoBehaviour
     {
         GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        GameManager.gameManager.onStartEditMode -= OnStartEditMode;
+        GameManager.gameManager. onStopEditMode -= OnStopEditMode;
     }
 
     public void OnDayModeActivated()
@@ -90,6 +117,13 @@ public class MaisonBlanche : MonoBehaviour
 
     void changeState()
     {
-
     }
+    public void OnMouseDown()
+    {
+
+       Instantiate(tankPrefab, new Vector3(pos.x, Convert.ToSingle(pos.y + 0.7), pos.z), Quaternion.identity);
+    }
+
+
+
 }

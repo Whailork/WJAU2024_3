@@ -101,8 +101,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   spriteArrayDay: []
+  spriteArrayNight: []
   pointDeVie: 0
   etat: 0
+  isDay: 0
+  tankPrefab: {fileID: 2153611195199184767, guid: 9559f5105ce1a9f499556cd105813482, type: 3}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!61 &2465901157347749191
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -3,8 +3,11 @@ using
 
 namespace Monster
 {
+   
     public class Monster : MonoBehaviour
     {
+        public int amountToAdd;
+        
         // Variables
         public int life;
         public int power;
@@ -38,6 +41,7 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         { 
+           
             MapManager.mapManager.setList();
         }
 
@@ -75,6 +79,8 @@ namespace Monster
             if (life <= 0)
             {
                 Destroy(gameObject);
+                GameManager.gameManager.AddMoney(amountToAdd);
+                
             }
         }
 

@@ -12,7 +12,7 @@ public class RayonTower : Tower
     protected Animator animator;
     void Start()
     {
-        
+       
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
     }

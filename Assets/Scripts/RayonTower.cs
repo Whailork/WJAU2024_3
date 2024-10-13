@@ -17,7 +17,7 @@ public class RayonTower : Tower
         range = rayonTowerRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
-
+        GameManager.gameManager.RemoveMoney(amountToRemove);
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }

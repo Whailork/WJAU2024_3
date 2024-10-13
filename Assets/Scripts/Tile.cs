@@ -30,23 +30,36 @@ public class Tile : MonoBehaviour
         {
             
             
-            isOccupied = true;
+           
             
             switch (GameManager.gameManager.selectedTower)
             {
             
                 case "Donut":
-                    Debug.Log("Donut");
-                    
-                    tower = Instantiate(DonutPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                   
+                    if (GameManager.gameManager.money >= DonutPrefab.amountToRemove)
+                    {
+                        isOccupied = true;
+                        tower = Instantiate(DonutPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                    }
+                   
                     break;
                 case "Rayon":
-                    Debug.Log("Rayon");
-                    tower = Instantiate(RayonPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                    if (GameManager.gameManager.money >= RayonPrefab.amountToRemove)
+                    {
+                        isOccupied = true;
+                        tower = Instantiate(RayonPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                    }
+                    
                     break;
                 
                 case "Bunker":
-                    tower = Instantiate(BunkerPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                    if (GameManager.gameManager.money >= BunkerPrefab.amountToRemove)
+                    {
+                        isOccupied = true;
+                        tower = Instantiate(BunkerPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
+                    }
+
                     //tower = Instantiate();
                     break;
             

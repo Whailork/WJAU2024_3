@@ -69,6 +69,12 @@ public class RoadTower : Tower
     {
     }
 
+    public void OnDestroy()
+    {
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+    }
+
     public void OnDayModeActivated()
     {
         GetComponent<Animator>().SetBool("Night", false);

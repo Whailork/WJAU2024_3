@@ -44,10 +44,7 @@ public class Tile : MonoBehaviour
                     Debug.Log("Rayon");
                     tower = Instantiate(RayonPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     break;
-                case "Road":
-                    tower = Instantiate(TankPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
-                    //tower = Instantiate();
-                    break;
+                
                 case "Bunker":
                     tower = Instantiate(BunkerPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     //tower = Instantiate();
@@ -72,14 +69,20 @@ public class Tile : MonoBehaviour
 
     public void OnStartEditMode()
     {
-        if (isOccupied)
+        if (GameManager.gameManager.selectedTower != "Road")
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
+            if (isOccupied)
+            {
+
+                GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = Color.green;
+            }
+
         }
-        else
-        {
-            GetComponent<SpriteRenderer>().color = Color.green;
-        }
+        
         
     }
 
@@ -111,6 +114,12 @@ public class Tile : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
     }
 
     public void OnDayModeActivated()

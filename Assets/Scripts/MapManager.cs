@@ -15,6 +15,7 @@ public class MapManager : MonoBehaviour
     public int currentLevel;
     public PathsDatas currentMap;
 
+
     // Singleton
     private void Awake()
     {
@@ -58,8 +59,8 @@ public class MapManager : MonoBehaviour
     {
         if(maps.Count != 0)
         {
-            // currentLevel est donnée lors du choix du niveau
-            currentLevel = 1; // TODO : à retirer
+            // currentLevel est donnï¿½e lors du choix du niveau
+            currentLevel = 1; // TODO : ï¿½ retirer
             currentMap = maps[currentLevel - 1];
             
 
@@ -72,5 +73,10 @@ public class MapManager : MonoBehaviour
         {
             Debug.LogError("currentLevel non setter!!!");
         }
+    }
+
+    public void setBackground()
+    {
+
     }
 }

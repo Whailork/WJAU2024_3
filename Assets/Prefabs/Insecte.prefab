@@ -200,9 +200,9 @@ MonoBehaviour:
   power: 45
   sleep: 0
   electric: 0
-  dark: 0
+  dark: 1
   targetPosition: {x: 0, y: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 9017282807529737486}
   velocity: {x: 0, y: 0}
   nextPoint: 0
 --- !u!1001 &7318996627511460804
@@ -339,3 +339,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7931116965571284777, guid: 68c63a5d9ac719e4f8ccc767708af8d1, type: 3}
   m_PrefabInstance: {fileID: 7318996627511460804}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9017282807529737486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1779377427392646858, guid: 68c63a5d9ac719e4f8ccc767708af8d1, type: 3}
+  m_PrefabInstance: {fileID: 7318996627511460804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598202366b7746a43aba1490d0cf8778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

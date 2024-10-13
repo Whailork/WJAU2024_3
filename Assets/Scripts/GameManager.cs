@@ -117,6 +117,8 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             { 
                 onStopEditMode?.Invoke();
+                GameObject menu = GameObject.Find("UpgradeMenu");
+                menu.GetComponent<UpgrdaeMenuScript>().closeMenu();
             
             }
         }

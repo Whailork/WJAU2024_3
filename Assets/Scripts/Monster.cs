@@ -77,12 +77,13 @@ namespace Monster
         {
             if (life <= 0)
             {
-                
+                GameManager.gameManager.enemies.Remove(this);
+                GameManager.gameManager.AddMoney(amountToAdd);
                 Debug.Log("Mort du monstre");
                 StartCoroutine(Wait());
-                GameManager.gameManager.enemies.Remove(this);
+
                 Destroy(gameObject);
-                GameManager.gameManager.AddMoney(amountToAdd);
+
             }
         }
 

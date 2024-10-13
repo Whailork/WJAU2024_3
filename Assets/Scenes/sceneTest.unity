@@ -359,6 +359,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5206230652032297747, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
       objectReference: {fileID: 0}
@@ -408,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8323128054849713799, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8323128054849713799, guid: c13620dba96420647b6ba6f7cf964eb5, type: 3}
       propertyPath: m_SortingLayerID
@@ -979,6 +991,8 @@ MonoBehaviour:
   Hp: 0
   money: 0
   selectedTower: 
+  moneyWidget: {fileID: 0}
+  hpWidget: {fileID: 0}
 --- !u!4 &2134194076
 Transform:
   m_ObjectHideFlags: 0

@@ -10,18 +10,36 @@ public class DonutTower : Tower
     public int petitRayon;
     public int grandRayon;
     protected Animator animator;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite nightSprite;
+
     
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
+    }
+
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
+
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check if lorsque ennemie est d�truit targetMonster = null?
+        // Check if lorsque ennemie est detruit targetMonster = null?
         if (targetMonster == null || targetOutOfRange())
         {
             Attack();

@@ -19,7 +19,10 @@ public class GameManager : MonoBehaviour
     public Action onStopEditMode;
     public GameObject moneyWidget;
     public GameObject hpWidget;
-    
+    public Action onNightModeActivated;
+    public Action onDayModeActivated;
+    public Input mode;
+
     public void AddMoney(int amount)
     {
         money += amount;
@@ -34,9 +37,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Money decreased: " + money);
     }
 
-    public void takeDamage(int amount)
+    public void takeDamage(int amountDamage)
     {
-        Hp -= amount;
+        Hp -= amountDamage;
         hpWidget.GetComponent<TextMeshPro>().text = Hp + "";
         //TODO : faire que quand tu est à 0 ça finit la partie
     }
@@ -56,7 +59,6 @@ public class GameManager : MonoBehaviour
         //Debug.Log("initiate edit mode");
         onStartEditMode += OnStartEditMode;
         onStopEditMode += OnStopEditMode;
-
     }
 
     public void TowerIconClicked()
@@ -72,6 +74,17 @@ public class GameManager : MonoBehaviour
     public void OnStopEditMode()
     {
         editMode = false;
+    }
+
+    public void OnNightModeActivated()
+    {
+        //nightMode = true;
+
+
+    }
+    public void OnDayModeActivated()
+    {
+
     }
 
     private void OnDisable()
@@ -92,8 +105,9 @@ public class GameManager : MonoBehaviour
     {
         hpWidget.GetComponent<TextMeshProUGUI>().text = Hp + "";
         moneyWidget.GetComponent<TextMeshProUGUI>().text = money + "";
-        
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -106,6 +120,10 @@ public class GameManager : MonoBehaviour
             
             }
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            onNightModeActivated?.Invoke();
+        }
     }
 }

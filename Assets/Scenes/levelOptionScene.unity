@@ -434,6 +434,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSong: {fileID: 0}
   btnSound: {fileID: 8300000, guid: aab18b28195a6d04f99fa68d1dfa1fb7, type: 3}
+  but1: {fileID: 0}
+  but2: {fileID: 0}
+  but3: {fileID: 0}
 --- !u!114 &45998355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,7 +1025,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 589666409}
         m_TargetAssemblyTypeName: TestingMenuButtons, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: LevelOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1046,6 +1049,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSong: {fileID: 8300000, guid: 3e00cef7c3042ae4bb6cbb1156326734, type: 3}
   btnSound: {fileID: 8300000, guid: aab18b28195a6d04f99fa68d1dfa1fb7, type: 3}
+  but1: {fileID: 0}
+  but2: {fileID: 0}
+  but3: {fileID: 0}
 --- !u!114 &589666410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,7 +1176,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 598984693}
         m_TargetAssemblyTypeName: TestingMenuButtons, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: LevelThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1194,6 +1200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSong: {fileID: 8300000, guid: 3e00cef7c3042ae4bb6cbb1156326734, type: 3}
   btnSound: {fileID: 8300000, guid: aab18b28195a6d04f99fa68d1dfa1fb7, type: 3}
+  but1: {fileID: 0}
+  but2: {fileID: 0}
+  but3: {fileID: 0}
 --- !u!114 &598984694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,7 +1679,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1226656897}
         m_TargetAssemblyTypeName: TestingMenuButtons, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: LevelTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1694,6 +1703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSong: {fileID: 8300000, guid: 3e00cef7c3042ae4bb6cbb1156326734, type: 3}
   btnSound: {fileID: 8300000, guid: aab18b28195a6d04f99fa68d1dfa1fb7, type: 3}
+  but1: {fileID: 0}
+  but2: {fileID: 0}
+  but3: {fileID: 0}
 --- !u!114 &1226656898
 MonoBehaviour:
   m_ObjectHideFlags: 0

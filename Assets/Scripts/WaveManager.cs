@@ -7,9 +7,11 @@ using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
+    public Animator animator;
     public static WaveManager waveManager;
     private int wave;
     private int nbRemaining;
+    public PortailScript portail;
     public GameObject waveWidget;
     public List<Wave> waves;
     public Wave currentWave;
@@ -44,9 +46,11 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         wave = 0;
+        portail = GameObject.Find("Portail").GetComponent<PortailScript>();
+        animator = portail.GetComponent<Animator>();
         BeginWave(wave);
+       
     }
 
     // Update is called once per frame
@@ -54,13 +58,14 @@ public class WaveManager : MonoBehaviour
     {
         if (isWaveSpawned() && GameManager.gameManager.enemies.Count == 0)
         {
+           
+            //portail.allFalse();
             Debug.Log("newWave!");
             wave++;
             godzillaSpawned = 0;
             serpentSpawned = 0;
             moustiqueSpawned = 0;
             manteSpawned = 0;
-            
             BeginWave(wave);
         }
         
@@ -70,6 +75,7 @@ public class WaveManager : MonoBehaviour
 
     public void GenerateMonster()
     {
+        portail.allTrue();
         float random = Random.Range(0, 4);
         if (random < 1)
         {
@@ -145,6 +151,7 @@ public class WaveManager : MonoBehaviour
         {
             currentWave = waves[wave];
             StartCoroutine(spawnCountdown(currentWave.timeBetweenSpawns));
+          
             
         }
     }
@@ -200,10 +207,12 @@ public class WaveManager : MonoBehaviour
             if (isWaveSpawned())
             {
                 StopCoroutine(spawnCountdown(time));
+                portail.allFalse();
             }
             else
             {
                 GenerateMonster(); 
+                
             }
             
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5249916248659760404}
   - component: {fileID: 2346490745146898310}
   m_Layer: 3
-  m_Name: Godzilla
+  m_Name: Godzilla_wrong_one
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

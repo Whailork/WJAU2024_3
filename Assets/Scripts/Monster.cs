@@ -9,11 +9,14 @@ namespace Monster
         
         // Variables
         public int life;
+        public int maxlife; 
         public int power;
         public bool sleep;
         public bool electric;
         public bool dark;
         public Vector2 targetPosition;
+
+        public floatinghealthbar healthBar;
 
         // TODO : Ajuster vitesse
         public Vector2 velocity;
@@ -33,15 +36,16 @@ namespace Monster
             {
                 Debug.Log("WhiteHouse collision");
 
-                collision.gameObject.GetComponent<MaisonBlanche>().takeDamage(power);
+                GameManager.gameManager.takeDamage(power);
             }
         }
 
         // Start is called before the first frame update
         void Start()
-        { 
-           
+        {
+            maxlife = life; 
             MapManager.mapManager.setList();
+            healthBar = GetComponentInChildren<floatinghealthbar>();
         }
 
         protected void goToTarget(Vector2 target)
@@ -71,8 +75,8 @@ namespace Monster
         {
             if (life <= 0)
             {
-                Destroy(this);
-                Debug.Log("Mort en tab");
+                GameManager.gameManager.enemies.Remove(this);
+                Destroy(gameObject);
                 GameManager.gameManager.AddMoney(amountToAdd);
                 
             }
@@ -84,9 +88,10 @@ namespace Monster
 
         public int DamageLife(int attack)
         {
-
+            
             life -= attack;
-            Debug.Log("Damaged");
+            healthBar.UpdateHealthBar(life,maxlife);
+            Debug.Log(life);
             return life;
 
         }

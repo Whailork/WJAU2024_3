@@ -10,11 +10,23 @@ public class RayonTower : Tower
     public int rayonTowerRayon;
 
     protected Animator animator;
+    private static readonly int Open = Animator.StringToHash("open");
+
     void Start()
     {
-       
+        range = rayonTowerRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
+    }
+    
+    public void OnMouseDown()
+    {
+        GameObject menu = GameObject.Find("UpgradeMenu");
+        menu.GetComponent<UpgrdaeMenuScript>().openMenu(this);
+       
     }
 
     void Update()
@@ -80,5 +92,18 @@ public class RayonTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+
+    }
+
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
+
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
     }
 }

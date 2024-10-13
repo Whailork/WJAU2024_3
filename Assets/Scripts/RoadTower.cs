@@ -15,25 +15,24 @@ public class RoadTower : Tower
 
     void Start()
     {
-        
-        nextPoint = MapManager.mapManager.pointsRepere.Count - 1;
+        nextPoint = (MapManager.mapManager.pointsRepere.Count) - 1;
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }
 
     private void FixedUpdate()
     {
+        Debug.Log("Next point : " + nextPoint);
 
-        if (targetPosition == Vector2.zero)
+        // Tant que le prochain point existe
+        if (nextPoint >= -1)
         {
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
-            goToTarget(targetPosition);
-            nextPoint--;
+            updateTarget();
+            
         }
-        else if (nextPoint >= -1)
-        {
 
-            nextPoint = updateTargetPoint(nextPoint);
-            goToTarget(targetPosition);
-        }
+        goToTarget(targetPosition);
     }
 
     protected void goToTarget(Vector2 target)
@@ -41,18 +40,24 @@ public class RoadTower : Tower
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
-    public int updateTargetPoint(int nextPoint)
+    public void updateTarget()
     {
-        float distance = Vector2.Distance(transform.position, targetPosition);
-
-        if (distance <= 0.1)
+        if (targetPosition != Vector2.zero)
         {
+            float distance = Vector2.Distance(transform.position, targetPosition);
 
-            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
-            nextPoint--;
+            if (distance <= 0.1)
+            {
+                Debug.Log(nextPoint);
+                nextPoint--;
+                targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+
+            }
         }
-
-        return nextPoint;
+        else
+        {
+            targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
+        }
     }
 
     public void takeDamage(int damages)
@@ -64,6 +69,19 @@ public class RoadTower : Tower
     {
     }
 
+    public void OnDestroy()
+    {
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+    }
 
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", false);
+    }
 
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
+    }
 }

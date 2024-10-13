@@ -14,8 +14,9 @@ namespace Monster
         void Start()
         {
             electric = false;
-            //dark = true;
-            Debug.Log("Start de godzilla");
+
+            GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }
 
         public void FixedUpdate()
@@ -53,6 +54,23 @@ namespace Monster
                 sleep = false;
             }
 
+        }
+
+        public void OnDestroy()
+        {
+            GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        }
+
+        // TODO : Gozilla n'a pas de dark/night mode
+        public void OnDayModeActivated()
+        {
+            //GetComponent<Animator>().SetBool("", false);
+        }
+
+        public void OnNightModeActivated()
+        {
+            //GetComponent<Animator>().SetBool("", true);
         }
     }
 }

@@ -309,8 +309,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Speed
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
+  m_sharedMaterial: {fileID: -1524519904444232556, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -443,8 +443,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Power
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
+  m_sharedMaterial: {fileID: -1524519904444232556, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -579,8 +579,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 7541a3e949a176746a251e1f03618ee1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
+  m_sharedMaterial: {fileID: -1524519904444232556, guid: d40813b1f59fc85448b9b89714e57755, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -779,6 +779,8 @@ GameObject:
   - component: {fileID: 1488243508254590388}
   - component: {fileID: 2980262416908523478}
   - component: {fileID: 7467707665119592363}
+  - component: {fileID: 3140818936130471022}
+  - component: {fileID: 2014520220521270302}
   m_Layer: 0
   m_Name: UpgradeMenu
   m_TagString: Untagged
@@ -872,3 +874,37 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3140818936130471022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765068870076709559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71207ba4897994b41a797707d5b06e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+--- !u!95 &2014520220521270302
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7765068870076709559}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29a7786fc4d6ced41b22e068e399a8ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -41,7 +41,7 @@ public class MapManager : MonoBehaviour
     {
         // TODO : if pathName = XXX, set those points
         Vector2[] tabXXX = {
-            new Vector2(-10.25f, 3.25f),
+            new Vector2(-7.25f, 3.25f),
             new Vector2(7.25f, 3.25f),
             new Vector2(7.25f, 0.25f),
             new Vector2(-7.75f, 0.25f),

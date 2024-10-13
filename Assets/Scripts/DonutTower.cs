@@ -23,6 +23,7 @@ public class DonutTower : Tower
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
 
+        GameManager.gameManager.RemoveMoney(amountToRemove);
         GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
         GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
     }

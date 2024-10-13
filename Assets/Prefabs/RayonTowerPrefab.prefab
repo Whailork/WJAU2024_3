@@ -99,13 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab50cab5fa2ca64b897a173fe3c9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToRemove: 0
+  amountToRemove: 10
   targetMonster: {fileID: 0}
   projectile: {fileID: 0}
   upgradeMenu: {fileID: 0}
   distance: 0
   fireRate: 2
   power: 25
+  range: 0
   rayonTowerRayon: 2
 --- !u!95 &3092778122781306613
 Animator:

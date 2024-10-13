@@ -10,7 +10,7 @@ namespace Monster
         {
 
             electric = false;
-
+            maxlife = life; 
             GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
             GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }

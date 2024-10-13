@@ -22,9 +22,9 @@ namespace Monster
         public void FixedUpdate()
         {
 
-            IfSleep();
+            IfSleep(sleep);
             IsDead();
-            float speed = 500f; //GetComponent<Rigidbody2D>().velocity.magnitude;
+            float speed = 1f;
             Debug.Log(speed);
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
@@ -47,11 +47,29 @@ namespace Monster
 
         }
 
-        public void IfSleep()
+        public bool DarkMode(bool d)
         {
-            if (sleep == true)
+            if (d == true)
             {
-                sleep = false;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool IfSleep(bool s)
+        {
+            Debug.Log("Godzilla s endort");
+            if (s == true)
+            {
+                return true;
+            }
+            else
+            {
+                StartCoroutine(Wait());
+                return false;
             }
 
         }
@@ -65,12 +83,12 @@ namespace Monster
         // TODO : Gozilla n'a pas de dark/night mode
         public void OnDayModeActivated()
         {
-            //GetComponent<Animator>().SetBool("", false);
+            GetComponent<Animator>().SetBool("", false);
         }
 
         public void OnNightModeActivated()
         {
-            //GetComponent<Animator>().SetBool("", true);
+            GetComponent<Animator>().SetBool("", true);
         }
     }
 }

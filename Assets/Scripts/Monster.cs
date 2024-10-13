@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace Monster
 {
@@ -43,6 +44,7 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         {
+            
             maxlife = life; 
             MapManager.mapManager.setList();
             healthBar = GetComponentInChildren<floatinghealthbar>();
@@ -75,11 +77,23 @@ namespace Monster
         {
             if (life <= 0)
             {
+                Debug.Log("Mort du monstre");
                 GameManager.gameManager.enemies.Remove(this);
+                StartCoroutine(Wait());
                 Destroy(gameObject);
                 GameManager.gameManager.AddMoney(amountToAdd);
                 
             }
+        }
+
+        public void OnDestroy()
+        {
+            StopCoroutine(Wait());
+        }
+
+        public IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(10);
         }
 
         public int GetPower() { return power; }

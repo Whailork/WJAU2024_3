@@ -30,7 +30,7 @@ public class TestingMenuButtons : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("levelOptionScene");
+        SceneManager.LoadScene("TowerDefenseScene");
         SoundPlayer.instance.PlaySFX(btnSound,2);
     }
     

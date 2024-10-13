@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour, ITower
 {
-    // References
+    public int amountToRemove;
     public Monster.Monster targetMonster;
     public Projectile projectile;
     public GameObject upgradeMenu;
@@ -17,7 +17,7 @@ public class Tower : MonoBehaviour, ITower
 
     void Start()
     {
-
+        GameManager.gameManager.RemoveMoney(amountToRemove);
     }
 
     // Update is called once per frame

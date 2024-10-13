@@ -20,22 +20,17 @@ namespace Monster
 
         public void FixedUpdate()
         {
-            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+
+            IfSleep();
+            IsDead();
+            //float speed = 500f; //GetComponent<Rigidbody2D>().velocity.magnitude;
+            Debug.Log(speed);
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
             GetComponent<Animator>().SetBool("Dark", dark);
             GetComponent<Animator>().SetBool("Electric", electric);
-            Debug.Log("FixedUpdate de godzilla");
 
-            IfSleep();
-
-            IsDead();
-
-            //life--;
-
-            //Debug.Log(life);
-            //Debug.Log(sleep);
 
             if (targetPosition == Vector2.zero)
             {

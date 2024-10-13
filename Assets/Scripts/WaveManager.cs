@@ -159,28 +159,33 @@ public class WaveManager : MonoBehaviour
                 newMonster = Instantiate(godzillaReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("Godzilla");
-                SoundPlayer.instance.PlaySFX(GodSound, 2);
+                //SoundPlayer.instance.PlaySFX(GodSound, 2);
                 break;
             case 1:
                 serpentSpawned++;
                 newMonster = Instantiate(serpentReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("serpent");
-                SoundPlayer.instance.PlaySFX(SerpSound, 2);
+                //SoundPlayer.instance.PlaySFX(SerpSound, 2);
                 break;
             case 2:
                 moustiqueSpawned++;
                 newMonster = Instantiate(moustiqueReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("moustique");
-                SoundPlayer.instance.PlaySFX(InsectSound, 2);
+                //InsectSound = GetComponent<AudioSource>();
+                //if (InsectSound != null)
+                //{
+                //    SoundPlayer.instance.PlaySFX(ManteSound, 2);
+                //}
+                
                 break;
             case 3:
                 manteSpawned++;
                 newMonster = Instantiate(manteReference, MapManager.mapManager.pointsRepere[0], Quaternion.identity);
                 GameManager.gameManager.enemies.Add(newMonster);
                 Debug.Log("mante religieuse");
-                SoundPlayer.instance.PlaySFX(ManteSound, 2);
+                //SoundPlayer.instance.PlaySFX(ManteSound, 2);
                 break;
             
         }

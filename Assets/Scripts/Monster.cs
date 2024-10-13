@@ -71,7 +71,8 @@ namespace Monster
         {
             if (life <= 0)
             {
-                Destroy(gameObject);
+                Destroy(this);
+                Debug.Log("Mort en tab");
                 GameManager.gameManager.AddMoney(amountToAdd);
                 
             }

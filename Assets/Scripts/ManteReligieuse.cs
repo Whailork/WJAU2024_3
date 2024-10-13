@@ -16,6 +16,8 @@ namespace Monster
         // Update is called once per frame
         void FixedUpdate()
         {
+            IsDead();
+
             float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
@@ -33,8 +35,6 @@ namespace Monster
                 nextPoint = updateTargetPoint(nextPoint);
                 goToTarget(targetPosition);
             }
-
-            IsDead();
 
         }
 

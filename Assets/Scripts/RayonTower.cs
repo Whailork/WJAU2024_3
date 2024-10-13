@@ -32,6 +32,7 @@ public class RayonTower : Tower
     void Update()
     {
         // Check if lorsque ennemie est d�truit targetMonster = null?
+        range = rayonTowerRayon;
         if (targetMonster == null || targetOutOfRange()) {
             Attack();
         }

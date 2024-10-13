@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691081747f3c2cf45ba0cde2525f5c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToAdd: 0
+  amountToAdd: 10
   life: 150
   maxlife: 0
   power: 30
@@ -205,7 +205,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   velocity: {x: 0, y: 0}
   nextPoint: 0
-  animator: {fileID: 0}
 --- !u!1001 &1817353393656688072
 PrefabInstance:
   m_ObjectHideFlags: 0

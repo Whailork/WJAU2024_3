@@ -81,7 +81,7 @@ namespace Monster
                 GameManager.gameManager.enemies.Remove(this);
                 StartCoroutine(Wait());
                 Destroy(gameObject);
-                GameManager.gameManager.AddMoney(amountToAdd);
+                
                 
             }
         }

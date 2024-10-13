@@ -18,13 +18,11 @@ namespace Monster
             animator.Play("Idle_Godzilla");
 
             electric = false;
-
-            nextPoint = 0;
         }
 
         private void FixedUpdate()
         {
-            Debug.Log("Monstre qui start");
+            //Debug.Log("Monstre qui start");
             if (targetPosition == Vector2.zero)
             {
                 targetPosition = MapManager.mapManager.pointsRepere[nextPoint];

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 998698181164950487}
   - component: {fileID: 5249916248659760404}
   - component: {fileID: 2346490745146898310}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Godzilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}

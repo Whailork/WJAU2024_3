@@ -10,18 +10,39 @@ public class DonutTower : Tower
     public int petitRayon;
     public int grandRayon;
     protected Animator animator;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite nightSprite;
+
     
+
     // Start is called before the first frame update
     void Start()
     {
+        range = grandRayon;
         animator = GetComponent<Animator>();
         StartCoroutine(fireCountDown());
+
+        GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
+    }
+
+    public void OnDayModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Nigh", false);
+        Debug.Log("Night = " + GetComponent<Animator>().GetBool("Night"));
+    }
+
+    public void OnNightModeActivated()
+    {
+        GetComponent<Animator>().SetBool("Night", true);
+        Debug.Log("Night = " + GetComponent<Animator>().GetBool("Night"));
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check if lorsque ennemie est d�truit targetMonster = null?
+        // Check if lorsque ennemie est detruit targetMonster = null?
         if (targetMonster == null || targetOutOfRange())
         {
             Attack();
@@ -53,6 +74,13 @@ public class DonutTower : Tower
         }
         return false;
     }
+    public void OnMouseDown()
+    {
+        GameObject menu = GameObject.Find("UpgradeMenu");
+        menu.GetComponent<UpgrdaeMenuScript>().openMenu(this);
+       
+    }
+
     
     private IEnumerator fireCountDown()
     {
@@ -80,5 +108,7 @@ public class DonutTower : Tower
     public void OnDestroy()
     {
         StopCoroutine(fireCountDown());
+        GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+        GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
     }
 }

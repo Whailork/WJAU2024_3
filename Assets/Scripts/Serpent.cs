@@ -8,7 +8,11 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         {
+
             electric = false;
+
+            GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }
 
         // Update is called once per frame
@@ -36,6 +40,20 @@ namespace Monster
 
         }
 
+        public void OnDestroy()
+        {
+            GameManager.gameManager.onDayModeActivated -= OnDayModeActivated;
+            GameManager.gameManager.onNightModeActivated -= OnNightModeActivated;
+        }
 
+        public void OnDayModeActivated()
+        {
+            GetComponent<Animator>().SetBool("Dark", false);
+        }
+
+        public void OnNightModeActivated()
+        {
+            GetComponent<Animator>().SetBool("Dark", true);
+        }
     }
 }

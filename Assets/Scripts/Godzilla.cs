@@ -21,16 +21,13 @@ namespace Monster
 
         public void FixedUpdate()
         {
-
-            IfSleep(sleep);
+            Debug.Log(sleep);
             IsDead();
-            float speed = 1f;
-            Debug.Log(speed);
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
+            GetComponent<Animator>().SetBool("Sleep", false);
             GetComponent<Animator>().SetFloat("Speed", speed);
-            GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
-            GetComponent<Animator>().SetBool("Dark", dark);
-            GetComponent<Animator>().SetBool("Electric", electric);
+            GetComponent<Animator>().SetBool("Electric", false);
 
 
             if (targetPosition == Vector2.zero)
@@ -47,32 +44,32 @@ namespace Monster
 
         }
 
-        public bool DarkMode(bool d)
-        {
-            if (d == true)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        //public bool DarkMode(bool d)
+        //{
+        //    if (d == true)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
 
-        public bool IfSleep(bool s)
-        {
-            Debug.Log("Godzilla s endort");
-            if (s == true)
-            {
-                return true;
-            }
-            else
-            {
-                StartCoroutine(Wait());
-                return false;
-            }
+        //public bool IfSleep(bool s)
+        //{
+        //    Debug.Log("Godzilla s endort");
+        //    if (s == true)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        StartCoroutine(Wait());
+        //        return false;
+        //    }
 
-        }
+        //}
 
         public void OnDestroy()
         {
@@ -83,12 +80,12 @@ namespace Monster
         // TODO : Gozilla n'a pas de dark/night mode
         public void OnDayModeActivated()
         {
-            GetComponent<Animator>().SetBool("", false);
+            GetComponent<Animator>().SetBool("Sleep", false);
         }
 
         public void OnNightModeActivated()
         {
-            GetComponent<Animator>().SetBool("", true);
+            GetComponent<Animator>().SetBool("Sleep", true);
         }
     }
 }

@@ -5,10 +5,14 @@ namespace Monster
     public class Serpent : Monster
     {
         public int nextPoint;
+        public Animator animator;
         // Start is called before the first frame update
         void Start()
         {
-            electric = false;
+
+            animator = GetComponent<Animator>();
+            animator.Play("Idle Serpent");
+            //electric = false;
 
             nextPoint = 0;
         }

@@ -21,6 +21,11 @@ namespace Monster
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Debug.Log("TriggerEnter_monster");
+
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                //collision.gameObject.SendMessage("ApplyDamage", 10);
+            }
         }
 
         // Start is called before the first frame update

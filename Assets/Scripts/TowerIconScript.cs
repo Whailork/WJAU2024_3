@@ -12,8 +12,16 @@ public class TowerIconScript : MonoBehaviour
     {
         GameManager.gameManager.selectedTower = towerType;
         //Debug.Log(towerType);
-        GameManager.gameManager.TowerIconClicked();
+        if (towerType == "tank")
+        {
+
+        }
+        else
+        {
+            GameManager.gameManager.TowerIconClicked();
+        }
     }
+
 
     void Start()
     {

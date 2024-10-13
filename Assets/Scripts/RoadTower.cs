@@ -66,7 +66,4 @@ public class RoadTower : Tower
     void Attack()
     {
     }
-
-
-
 }

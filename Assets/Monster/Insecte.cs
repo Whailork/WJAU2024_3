@@ -8,7 +8,6 @@ namespace Monster
         // Start is called before the first frame update
         void Start()
         { 
-            nextPoint = 0;
         }
 
         // Update is called once per frame

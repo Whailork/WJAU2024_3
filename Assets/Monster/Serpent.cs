@@ -13,8 +13,6 @@ namespace Monster
             animator = GetComponent<Animator>();
             animator.Play("Idle Serpent");
             //electric = false;
-
-            nextPoint = 0;
         }
 
         // Update is called once per frame

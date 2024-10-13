@@ -36,7 +36,7 @@ public class RoadTower : Tower
 
     protected void goToTarget(Vector2 target)
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, (Time.deltaTime * 10.00f));
+        transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime);
     }
 
     public int updateTargetPoint(int nextPoint)

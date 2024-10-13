@@ -47,7 +47,7 @@ public class RoadTower : Tower
 
         if (distance <= 0.1)
         {
-
+            //Debug.Log();
             targetPosition = MapManager.mapManager.pointsRepere[nextPoint];
             nextPoint--;
         }

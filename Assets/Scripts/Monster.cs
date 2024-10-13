@@ -2,8 +2,11 @@ using UnityEngine;
 
 namespace Monster
 {
+   
     public class Monster : MonoBehaviour
     {
+        public int amountToAdd;
+        
         // Variables
         public int life;
         public int power;
@@ -18,11 +21,26 @@ namespace Monster
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Debug.Log("TriggerEnter_monster");
+
+            if (collision.gameObject.CompareTag("Tank"))
+            {
+                Debug.Log("Tank collision");
+
+                life -= collision.gameObject.GetComponent<RoadTower>().power;
+                collision.gameObject.GetComponent<RoadTower>().takeDamage(power);
+            }
+            else if (collision.gameObject.CompareTag("WhiteHouse"))
+            {
+                Debug.Log("WhiteHouse collision");
+
+                collision.gameObject.GetComponent<MaisonBlanche>().takeDamage(power);
+            }
         }
 
         // Start is called before the first frame update
         void Start()
         { 
+           
             MapManager.mapManager.setList();
         }
 
@@ -54,6 +72,8 @@ namespace Monster
             if (life <= 0)
             {
                 Destroy(gameObject);
+                GameManager.gameManager.AddMoney(amountToAdd);
+                
             }
         }
 

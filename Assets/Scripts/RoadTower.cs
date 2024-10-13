@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static System.Net.Mime.MediaTypeNames;
 
+
 public class RoadTower : Tower
 {
     // Variables 
@@ -14,6 +15,7 @@ public class RoadTower : Tower
 
     void Start()
     {
+        
         nextPoint = MapManager.mapManager.pointsRepere.Count - 1;
     }
 
@@ -51,6 +53,11 @@ public class RoadTower : Tower
         }
 
         return nextPoint;
+    }
+
+    public void takeDamage(int damages)
+    {
+        pointDeVie -= damages;
     }
 
     void Attack()

@@ -1,23 +1,18 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Monster
 {
-    public class Godzilla : Monster
+    public class Serpent : Monster
     {
-
-        // Variables
         public int nextPoint;
-
         // Start is called before the first frame update
         void Start()
         {
             electric = false;
-            //dark = true;
-            Debug.Log("Start de godzilla");
         }
 
-        public void FixedUpdate()
+        // Update is called once per frame
+        void FixedUpdate()
         {
             float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Animator>().SetFloat("Speed", speed);
@@ -25,16 +20,6 @@ namespace Monster
             GetComponent<Animator>().SetInteger("Life", life);
             GetComponent<Animator>().SetBool("Dark", dark);
             GetComponent<Animator>().SetBool("Electric", electric);
-            Debug.Log("FixedUpdate de godzilla");
-
-            IfSleep();
-
-            IsDead();
-
-            //life--;
-
-            //Debug.Log(life);
-            //Debug.Log(sleep);
 
             if (targetPosition == Vector2.zero)
             {
@@ -47,16 +32,10 @@ namespace Monster
                 goToTarget(targetPosition);
             }
 
+            IsDead();
 
         }
 
-        public void IfSleep()
-        {
-            if (sleep == true)
-            {
-                sleep = false;
-            }
 
-        }
     }
 }

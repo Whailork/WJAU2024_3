@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2933658654095994212}
   - component: {fileID: 1541499156019580404}
   - component: {fileID: 3110235288877945288}
+  - component: {fileID: -7339477683946639241}
   m_Layer: 3
   m_Name: Godzilla
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -171,13 +172,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577cf294b6cf5fa4f8e58aabae813154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  power: 0
+  life: 100
+  power: 25
   sleep: 0
   electric: 0
   dark: 0
   targetPosition: {x: 0, y: 0}
-  rb: {fileID: 0}
-  move: {x: 10, y: 0}
   velocity: {x: 0, y: 0}
   nextPoint: 0
+--- !u!95 &-7339477683946639241
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295320814158024783}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1398bc974891896428b18fc21e6f128d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

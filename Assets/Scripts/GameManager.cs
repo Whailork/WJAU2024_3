@@ -11,11 +11,23 @@ public class GameManager : MonoBehaviour
     public List<Monster.Monster> enemies; // Enemies
     private List<string> towers; // Towers
     public int Hp;
-    public int money;
+    public int money = 0;
     public string selectedTower;
     private bool editMode;
     public Action onStartEditMode;
     public Action onStopEditMode;
+    
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        Debug.Log("Money increased: " + money);
+    }
+    
+    public void RemoveMoney(int amount)
+    {
+        money -= amount;
+        Debug.Log("Money decreased: " + money);
+    }
 
     private void Awake()
     {

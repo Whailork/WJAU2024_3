@@ -15,9 +15,9 @@ namespace Monster
         // TODO : Ajuster vitesse
         public Vector2 velocity;
 
-        void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("CollisionEnter_monster");
+            Debug.Log("TriggerEnter_monster");
         }
 
         // Start is called before the first frame update

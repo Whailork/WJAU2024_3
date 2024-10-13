@@ -13,8 +13,6 @@ namespace Monster
         void Start()
         {
             electric = false;
-
-            nextPoint = 0;
         }
 
         private void FixedUpdate()

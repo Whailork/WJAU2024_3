@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Tank
+  - WhiteHouse
   layers:
   - Default
   - TransparentFX
@@ -38,8 +39,11 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - WhiteHouse
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tank
+    uniqueID: 1528720183
     locked: 0

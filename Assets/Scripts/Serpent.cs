@@ -10,7 +10,6 @@ namespace Monster
         {
 
             electric = false;
-
             GameManager.gameManager.onDayModeActivated += OnDayModeActivated;
             GameManager.gameManager.onNightModeActivated += OnNightModeActivated;
         }
@@ -24,8 +23,6 @@ namespace Monster
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
-            GetComponent<Animator>().SetBool("Dark", dark);
-            GetComponent<Animator>().SetBool("Electric", electric);
 
             if (targetPosition == Vector2.zero)
             {

@@ -20,11 +20,9 @@ namespace Monster
 
         public void FixedUpdate()
         {
-
-            IfSleep(sleep);
+            Debug.Log(sleep);
             IsDead();
-            float speed = 1f;
-            Debug.Log(speed);
+            float speed = GetComponent<Rigidbody2D>().velocity.magnitude;
             GetComponent<Animator>().SetBool("Sleep", false);
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetInteger("Life", life);
@@ -45,32 +43,32 @@ namespace Monster
 
         }
 
-        public bool DarkMode(bool d)
-        {
-            if (d == true)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        //public bool DarkMode(bool d)
+        //{
+        //    if (d == true)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
 
-        public bool IfSleep(bool s)
-        {
-            Debug.Log("Godzilla s endort");
-            if (s == true)
-            {
-                return true;
-            }
-            else
-            {
-                StartCoroutine(Wait());
-                return false;
-            }
+        //public bool IfSleep(bool s)
+        //{
+        //    Debug.Log("Godzilla s endort");
+        //    if (s == true)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        StartCoroutine(Wait());
+        //        return false;
+        //    }
 
-        }
+        //}
 
         public void OnDestroy()
         {

@@ -22,8 +22,6 @@ namespace Monster
             GetComponent<Animator>().SetFloat("Speed", speed);
             GetComponent<Animator>().SetBool("Sleep", sleep);
             GetComponent<Animator>().SetInteger("Life", life);
-            GetComponent<Animator>().SetBool("Dark", dark);
-            GetComponent<Animator>().SetBool("Electric", electric);
 
             if (targetPosition == Vector2.zero)
             {
@@ -46,11 +44,13 @@ namespace Monster
 
         public void OnDayModeActivated()
         {
+            GetComponent<Animator>().SetBool("Electric", false);
             GetComponent<Animator>().SetBool("Dark", false);
         }
 
         public void OnNightModeActivated()
         {
+            GetComponent<Animator>().SetBool("Electric", true);
             GetComponent<Animator>().SetBool("Dark", true);
         }
     }

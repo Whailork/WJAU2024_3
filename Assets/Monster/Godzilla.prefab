@@ -183,12 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577cf294b6cf5fa4f8e58aabae813154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  power: 0
+  life: 100
+  power: 10
   sleep: 0
   electric: 0
   dark: 0
   targetPosition: {x: 0, y: 0}
-  speed: 500
+  rb: {fileID: 0}
+  move: {x: 10, y: 0}
   velocity: {x: 0, y: 0}
   nextPoint: 0

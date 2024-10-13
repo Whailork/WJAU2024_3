@@ -31,7 +31,6 @@ namespace Monster
                 goToTarget(targetPosition);
            }
 
-           
             if (dark == true)
             {
                 if (dark == true)
@@ -39,25 +38,9 @@ namespace Monster
                     sleep = true;
                 }
             }
-           
+
+            IsDead();
 
         }
-
-        //    void Update()
-        //    {
-
-        //    }
-
-
-        //    public void IfdarkMode(bool dark)
-        //    {
-        //        if (dark == true)
-        //        {
-        //            if (dark == true)
-        //            {
-        //                sleep = true;
-        //            }
-        //        }
-        //    }
     }
 }

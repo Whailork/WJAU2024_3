@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4704846881082193158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.199997, y: -0.6399994, z: 0}
+  m_LocalPosition: {x: 2.199997, y: -0.6399994, z: -1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1379918831
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a7689a680bf3c0b48804ef6c0dc9755f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RayonPrefab: {fileID: 244017933331368729, guid: dcb08fb25545db84798b38db63706b94, type: 3}
   DonutPrefab: {fileID: 7977739714725722117, guid: 6c585ca1f8359c4488d9cb31e93cc7eb, type: 3}
+  TankPrefab: {fileID: 2153611195199184767, guid: 9559f5105ce1a9f499556cd105813482, type: 3}
+  BunkerPrefab: {fileID: 3877212945722128716, guid: c5a043b4519fc684aaca5e5c1fd4c1d5, type: 3}
   pos: {x: 0, y: 0, z: 0}
 --- !u!61 &8431169715201324841
 BoxCollider2D:

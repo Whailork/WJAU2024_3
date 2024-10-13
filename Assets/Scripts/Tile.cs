@@ -9,6 +9,8 @@ public class Tile : MonoBehaviour
     private bool isOccupied;
     public RayonTower RayonPrefab;
     public DonutTower DonutPrefab;
+    public RoadTower TankPrefab;
+    public RayonTower BunkerPrefab;
     private Tower tower;
     public Vector3 pos;
     
@@ -37,9 +39,11 @@ public class Tile : MonoBehaviour
                     tower = Instantiate(RayonPrefab,pos,Quaternion.identity); 
                     break;
                 case "Road":
+                    tower = Instantiate(TankPrefab,pos,Quaternion.identity); 
                     //tower = Instantiate();
                     break;
-                case "Regular":
+                case "Bunker":
+                    tower = Instantiate(BunkerPrefab,pos,Quaternion.identity); 
                     //tower = Instantiate();
                     break;
             

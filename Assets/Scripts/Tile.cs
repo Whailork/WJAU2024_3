@@ -27,23 +27,25 @@ public class Tile : MonoBehaviour
             
             
             isOccupied = true;
+            
             switch (GameManager.gameManager.selectedTower)
             {
             
                 case "Donut":
                     Debug.Log("Donut");
-                    tower = Instantiate(DonutPrefab,pos,Quaternion.identity); 
+                    
+                    tower = Instantiate(DonutPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     break;
                 case "Rayon":
                     Debug.Log("Rayon");
-                    tower = Instantiate(RayonPrefab,pos,Quaternion.identity); 
+                    tower = Instantiate(RayonPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     break;
                 case "Road":
-                    tower = Instantiate(TankPrefab,pos,Quaternion.identity); 
+                    tower = Instantiate(TankPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     //tower = Instantiate();
                     break;
                 case "Bunker":
-                    tower = Instantiate(BunkerPrefab,pos,Quaternion.identity); 
+                    tower = Instantiate(BunkerPrefab,new Vector3(pos.x,Convert.ToSingle(pos.y+0.7),pos.z),Quaternion.identity); 
                     //tower = Instantiate();
                     break;
             

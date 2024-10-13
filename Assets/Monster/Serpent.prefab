@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691081747f3c2cf45ba0cde2525f5c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  power: 0
+  life: 150
+  power: 30
   sleep: 0
   electric: 0
   dark: 0

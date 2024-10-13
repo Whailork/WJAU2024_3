@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: wave1
   m_EditorClassIdentifier: 
   manteNb: 0
-  godzillaNb: 5
+  godzillaNb: 0
   serpentNb: 0
-  moustiqueNb: 0
+  moustiqueNb: 5
   timeBetweenSpawns: 2
